@@ -1,0 +1,14 @@
+$blueprint_grid_columns: 24;
+$blueprint_grid_width: 40px;
+ 
+@import "blueprint";
+
+.container {
+  @include container;
+  }
+  
+.columns {
+ 
+&.twelve { @include column(12);}
+&.eleven { @include column(11);}   
+ }

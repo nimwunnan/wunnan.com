@@ -1,0 +1,20 @@
+.container {
+  width: 1190px;
+  margin: 0 auto;
+  overflow: hidden;
+  *zoom: 1; }
+
+.columns.twelve {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 590px; }
+  * html .columns.twelve {
+    overflow-x: hidden; }
+.columns.eleven {
+  display: inline;
+  float: left;
+  margin-right: 10px;
+  width: 540px; }
+  * html .columns.eleven {
+    overflow-x: hidden; }

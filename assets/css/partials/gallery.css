@@ -1,0 +1,142 @@
+* {
+  box-sizing: border-box; }
+
+body.gallery {
+  background: white;
+  font-family: 'Ropa Sans', Helvetica Neue, sans-serif;
+  overflow: hidden; }
+
+.fgDisplay {
+  margin-top: 45px; }
+
+.fgDrawer {
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+  color: #51585e;
+  height: 45px; }
+
+.handle {
+  float: right;
+  width: 60px;
+  margin-bottom: 40px;
+  margin-top: -60px; }
+  .handle > div {
+    border-top: 1px solid #dddcd7;
+    margin: 0px 0px 1px;
+    width: 100%;
+    height: 2px;
+    background: white; }
+
+.fgGallery {
+  width: 100%;
+  text-align: center; }
+
+.fgNext, .fgPrevious, .fgDescription {
+  float: left;
+  width: 33.3%;
+  margin: 0px;
+  background-color: white;
+  height: 45px;
+  border-top: white solid 1px;
+  line-height: 45px;
+  transition: background-color .2s ease-in, color .2s ease-out;
+  -moz-transition: background-color .2s ease-in;
+  -webkit-transition: background-color .2s ease-in, color .2s ease-out;
+  -o-transition: background-color linear .2s ease-in; }
+  .fgNext:hover, .fgPrevious:hover, .fgDescription:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+    color: #51585e; }
+
+.fgNext {
+  text-align: right; }
+
+.fgNext, .fgPrevious, .fgTitle {
+  padding: 0px 15px; }
+
+.fgNext, .fgPrevious {
+  color: #eae9df; }
+
+.fgTitle {
+  border-left: 1px solid #eae9df;
+  border-right: 1px solid #eae9df;
+  font-size: 18px;
+  text-align: center;
+  float: left;
+  width: 100%; }
+  .fgTitle > div {
+    border-top: 1px solid #dddcd7;
+    margin: 0px 0px 1px;
+    width: 100%;
+    height: 2px;
+    background: white; }
+
+.fgCaption {
+  float: left;
+  width: 100%;
+  font-size: 18px;
+  line-height: 27px;
+  padding: 15px; }
+
+.fgToggle {
+  font-size: 22.32px;
+  line-height: 12.6px;
+  color: #51585e;
+  position: absolute;
+  display: none; }
+
+.fgDescription {
+  height: 400px;
+  transition: background-color .5s linear, margin-top .5s ease-in;
+  -moz-transition: background-color .5s linear, margin-top .5s ease-in;
+  -webkit-transition: background-color .5s linear, margin-top .5s ease-in;
+  -o-transition: background-color linear .5s margin-top .5s ease-in;
+  -moz-border-radius-topleft: 3px;
+  -webkit-border-top-left-radius: 3px;
+  -khtml-border-radius-topleft: 3px;
+  /* for old Konqueror browsers */
+  -moz-border-radius-topright: 3px;
+  -webkit-border-top-right-radius: 3px;
+  border-radius-topright: 3px;
+  /* future proofing */
+  -khtml-border-radius-topright: 3px;
+  /* for old Konqueror browsers */ }
+  .fgDescription:hover {
+    margin-top: -400px;
+    background-color: #f1f1f1; }
+
+.fgNav div {
+  margin-top: 0px;
+  float: right;
+  height: 45px;
+  display: block;
+  padding: 0px 5px;
+  transition: background-color .5s linear, margin-top 1s ease-out;
+  -moz-transition: background-color .5s linear, margin-top 1s ease-out;
+  -webkit-transition: background-color .5s linear, margin-top 1s ease-out;
+  -o-transition: background-color linear .5s margin-top 1s ease-out;
+  color: #51585e; }
+  .fgNav div:hover {
+    background-color: #d9d9d9;
+    cursor: pointer;
+    cursor: hand; }
+
+#titlecard {
+  width: 33%;
+  background: #3A3A3A;
+  height: 500px;
+  font-size: 35px;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  color: white;
+  text-align: center;
+  font-weight: 100;
+  z-index: 100;
+  position: relative; }
+  #titlecard div {
+    border: 1px solid white;
+    padding: 25px;
+    height: 500px; }

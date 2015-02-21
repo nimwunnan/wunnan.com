@@ -1,0 +1,19 @@
+* html {
+  font-size: 100%; }
+
+html {
+  font-size: 16px;
+  line-height: 1.5em; }
+
+a {
+  text-decoration: none; }
+
+li {
+  line-height: 24px;
+  font-size: 16px; }
+  li.title {
+    font-size: 1.5em;
+    line-height: 2em; }
+  li a {
+    line-height: inherit;
+    font-size: inherit; }
