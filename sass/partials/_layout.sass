@@ -1,9 +1,67 @@
-#page-wrapper
+body
+  padding: 0px 35px
+  background-color: $yellowgrey
+
+header
+  border-top: 35px solid $yellowgrey
   position: fixed
+  width: 100%
+  top: 0px
+  z-index: 15000
+  background: transparent url(../images/wbug.png) 10px 10px no-repeat
+  font-family: "Lato", sans-serif
+  font-weight: bold
+  ul
+    float: right
+    margin-right: 70px
+    width: 250px
+    padding: 15px 20px
+    li
+      color: $white
+      float: left
+      padding: 0px 5px 0px 0px
+      a 
+        color: $white
+        &:hover
+          color: $flatred
+
+  #extra-nav 
+    float: right
+    margin-right: 70px
+    width: 250px
+    clear: both
+    padding: 0px 20px
+    border-top: 1px solid $yellowgrey
+    .tab 
+      cursor: pointer
+      width: 100%
+      background: transparent url(../images/tab.png) center top no-repeat
+      height: 25px
+      font-size: 0px
+
+
+#page-wrapper
   overflow: auto
+  padding-top: 35px
   section
     background-attachment: fixed
     background-position: center 40%
     background-repeat: no-repeat
     background-color: transparent
     height: 100vh
+    -webkit-background-size: cover
+    -moz-background-size: cover
+    -o-background-size: cover
+    background-size: cover
+    div.hero
+      padding-top: 350px
+
+
+#frame
+  position: fixed
+  height: 35px
+  width: 100%
+  z-index: 14999
+  margin: 0px
+  bottom: 0px
+  background: $yellowgrey

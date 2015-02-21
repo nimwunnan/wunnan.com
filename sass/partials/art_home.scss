@@ -1,13 +1,5 @@
 @import "../_sassvars.scss";
-body.art_home {
-    background: url(../images/hotel-ink-bg.jpg) no-repeat center center fixed; 
-    border: 35px solid #EAE9DF; 
-    margin:0px; min-height:880px; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    
+#art {    
     div {
         width: 500px; 
         margin-left: auto; 

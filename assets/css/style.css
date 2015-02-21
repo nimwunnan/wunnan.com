@@ -67,88 +67,142 @@ li {
     line-height: inherit;
     font-size: inherit; }
 
-body.art_home {
-  background: url(../images/hotel-ink-bg.jpg) no-repeat center center fixed;
-  border: 35px solid #EAE9DF;
+#art div {
+  width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: visible; }
+  #art div#menu {
+    border-top: 1px solid #eae9df; }
+#art #lorem {
+  /*font-family: DIN, Helvetica, san-serif; 
+  color: rgb(52, 57, 80); 
+  
+  border-top: 1px solid rgb(52, 57, 80); 
+  text-align: center;  
+  font-size: 60px; 
+  font-weight: lighter; 
+  padding: 20px;
   margin: 0px;
-  min-height: 880px;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover; }
-  body.art_home div {
-    width: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: visible; }
-    body.art_home div#menu {
-      border-top: 1px solid #eae9df; }
-  body.art_home #lorem {
-    /*font-family: DIN, Helvetica, san-serif; 
-    color: rgb(52, 57, 80); 
-    
-    border-top: 1px solid rgb(52, 57, 80); 
-    text-align: center;  
-    font-size: 60px; 
-    font-weight: lighter; 
-    padding: 20px;
-    margin: 0px;
-    margin-top: -2px;*/
-    font-family: 'Ropa Sans', Helvetica, san-serif;
-    color: transparent;
-    text-align: center;
-    font-size: 60px;
-    font-weight: lighter;
-    padding: 60px 0px 20px;
-    margin: 0px;
-    margin-top: -2px;
-    text-shadow: -7px 0px 3px #ea5555; }
-    body.art_home #lorem:hover {
-      text-shadow: -7px 0px 1px #ea5555; }
-  body.art_home #secondunder {
-    margin-top: 0px;
-    border-top: 1px solid #4d3b3b;
-    padding: 0px; }
-  body.art_home #head {
+  margin-top: -2px;*/
+  font-family: 'Ropa Sans', Helvetica, san-serif;
+  color: transparent;
+  text-align: center;
+  font-size: 60px;
+  font-weight: lighter;
+  padding: 60px 0px 20px;
+  margin: 0px;
+  margin-top: -2px;
+  text-shadow: -7px 0px 3px #ea5555; }
+  #art #lorem:hover {
+    text-shadow: -7px 0px 1px #ea5555; }
+#art #secondunder {
+  margin-top: 0px;
+  border-top: 1px solid #4d3b3b;
+  padding: 0px; }
+#art #head {
+  float: left;
+  width: 100%;
+  padding: 10px 0px 0px;
+  border-top: 1px solid #eae9df;
+  border-bottom: 1px solid #eae9df;
+  margin-bottom: 10px; }
+  #art #head ul {
     float: left;
     width: 100%;
-    padding: 10px 0px 0px;
-    border-top: 1px solid #eae9df;
-    border-bottom: 1px solid #eae9df;
-    margin-bottom: 10px; }
-    body.art_home #head ul {
+    height: 20px;
+    margin-bottom: 12px; }
+    #art #head ul li {
+      text-align: center;
       float: left;
+      width: 33%; }
+#art ul {
+  float: left;
+  width: 31%;
+  height: 140px;
+  padding-left: 1%; }
+  #art ul li {
+    list-style: none;
+    color: whitesmoke;
+    font-family: 'Ropa Sans', Helvetica, san-serif;
+    font-weight: 100; }
+    #art ul li .title {
+      font-weight: bold; }
+  #art ul a {
+    color: #eae9df; }
+    #art ul a:hover {
+      color: #ea5555;
+      cursor: pointer; }
+
+body {
+  padding: 0px 35px;
+  background-color: #eae9df; }
+
+header {
+  border-top: 35px solid #eae9df;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 15000;
+  background: transparent url(../images/wbug.png) 10px 10px no-repeat;
+  font-family: "Lato", sans-serif;
+  font-weight: bold; }
+  header ul {
+    float: right;
+    margin-right: 70px;
+    width: 250px;
+    padding: 15px 20px; }
+    header ul li {
+      color: white;
+      float: left;
+      padding: 0px 5px 0px 0px; }
+      header ul li a {
+        color: white; }
+        header ul li a:hover {
+          color: #ea5555; }
+  header #extra-nav {
+    float: right;
+    margin-right: 70px;
+    width: 250px;
+    clear: both;
+    padding: 0px 20px;
+    border-top: 1px solid #eae9df; }
+    header #extra-nav .tab {
+      cursor: pointer;
       width: 100%;
-      height: 20px;
-      margin-bottom: 12px; }
-      body.art_home #head ul li {
-        text-align: center;
-        float: left;
-        width: 33%; }
-  body.art_home ul {
-    float: left;
-    width: 31%;
-    height: 140px;
-    padding-left: 1%; }
-    body.art_home ul li {
-      list-style: none;
-      color: whitesmoke;
-      font-family: 'Ropa Sans', Helvetica, san-serif;
-      font-weight: 100; }
-      body.art_home ul li .title {
-        font-weight: bold; }
-    body.art_home ul a {
-      color: #eae9df; }
-      body.art_home ul a:hover {
-        color: #ea5555;
-        cursor: pointer; }
+      background: transparent url(../images/tab.png) center top no-repeat;
+      height: 25px;
+      font-size: 0px; }
 
 #page-wrapper {
-  position: fixed;
-  overflow: auto; }
+  overflow: auto;
+  padding-top: 35px; }
   #page-wrapper section {
     background-attachment: fixed;
     background-position: center 40%;
     background-repeat: no-repeat;
     background-color: transparent;
-    height: 100vh; }
+    height: 100vh;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; }
+    #page-wrapper section div.hero {
+      padding-top: 350px; }
+
+#frame {
+  position: fixed;
+  height: 35px;
+  width: 100%;
+  z-index: 14999;
+  margin: 0px;
+  bottom: 0px;
+  background: #eae9df; }
+
+#page-wrapper #landing {
+  background-image: url(../images/tripplepalm.jpg); }
+#page-wrapper #art {
+  background-image: url(../images/hotel-ink-bg.jpg); }
+#page-wrapper #bio {
+  background: #ea5555 url(../images/headshot.jpg) left top no-repeat;
+  background-size: 60%; }
