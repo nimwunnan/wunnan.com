@@ -204,5 +204,4 @@ header {
 #page-wrapper #art {
   background-image: url(../images/hotel-ink-bg.jpg); }
 #page-wrapper #bio {
-  background: #ea5555 url(../images/headshot.jpg) left top no-repeat;
-  background-size: 60%; }
+  background-image: url(../images/headshot.jpg); }
