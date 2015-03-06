@@ -151,7 +151,8 @@ header {
     float: right;
     margin-right: 70px;
     width: 250px;
-    padding: 15px 20px; }
+    padding: 15px 20px;
+    clear: both; }
     header ul li {
       color: white;
       float: left;
@@ -161,18 +162,38 @@ header {
         header ul li a:hover {
           color: #ea5555; }
   header #extra-nav {
+    -webkit-transition-property: max-height;
+    -moz-transition-property: max-height;
+    -o-transition-property: max-height;
+    transition-property: max-height;
+    -webkit-transition-duration: 1s;
+    -moz-transition-duration: 1s;
+    -o-transition-duration: 1s;
+    transition-duration: 1s;
+    max-height: 0px;
+    overflow: hidden;
+    padding: 0px 20px; }
+    header #extra-nav.open {
+      border-top: 1px dashed #eae9df;
+      max-height: 300px;
+      padding: 15px 20px; }
+  header #nav-toggle {
     float: right;
     margin-right: 70px;
     width: 250px;
     clear: both;
     padding: 0px 20px;
-    border-top: 1px solid #eae9df; }
-    header #extra-nav .tab {
+    border-top: 1px solid white; }
+    header #nav-toggle:hover {
+      border-top: 1px solid #ea5555; }
+    header #nav-toggle .tab {
       cursor: pointer;
       width: 100%;
-      background: transparent url(../images/tab.png) center top no-repeat;
+      background: transparent url(../images/tab.png) center bottom no-repeat;
       height: 25px;
       font-size: 0px; }
+      header #nav-toggle .tab:hover {
+        background-position: top; }
 
 #page-wrapper {
   overflow: auto;
@@ -186,7 +207,8 @@ header {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover; }
+    background-size: cover;
+    overflow: auto; }
     #page-wrapper section div.hero {
       padding-top: 350px; }
 
@@ -205,3 +227,75 @@ header {
   background-image: url(../images/hotel-ink-bg.jpg); }
 #page-wrapper #bio {
   background-image: url(../images/headshot.jpg); }
+#page-wrapper #words {
+  padding: 250px 90px 100px;
+  color: #3a3a3a;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+  -webkit-column-rule: 1px dashed #dddcd7;
+  -moz-column-rule: 1px dashed #dddcd7;
+  column-rule: 1px dashed #dddcd7;
+  column-fill: auto; }
+  #page-wrapper #words h2, #page-wrapper #words h1 {
+    font-family: "Abril Fatface", cursive;
+    line-height: 2em; }
+  #page-wrapper #words h1 {
+    font-size: 3.5em;
+    background-color: #acb5bb;
+    color: #eae9df;
+    width: 100%;
+    text-indent: 20px; }
+  #page-wrapper #words h2 {
+    font-size: 1.8em;
+    margin: 10px 0px;
+    border-bottom: 1px dashed #dddcd7;
+    border-top: 1px dashed #dddcd7;
+    display: inline-block;
+    width: 100%; }
+    #page-wrapper #words h2 a {
+      color: #ea5555; }
+      #page-wrapper #words h2 a:hover {
+        color: #80cfef; }
+  #page-wrapper #words p {
+    padding-left: 10px;
+    font-family: "PT Serif", serif;
+    font-size: 1.1em;
+    display: inline-block;
+    width: 100%;
+    line-height: 1.5em; }
+#page-wrapper #feeds {
+  background-color: #9ca6ad;
+  font-family: "Lato", sans-serif;
+  font-weight: 900;
+  padding: 200px 25px;
+  color: #acb5bb; }
+  #page-wrapper #feeds h1 {
+    font-size: 3.6em;
+    line-height: 1.8em;
+    margin: 10px 0px;
+    text-transform: uppercase; }
+  #page-wrapper #feeds p {
+    font-weight: 700; }
+  #page-wrapper #feeds a {
+    color: #ea5555;
+    padding: 4px;
+    font-size: 2em;
+    line-height: 2.1em; }
+    #page-wrapper #feeds a:hover {
+      background-color: #eae9df; }
+#page-wrapper #dev {
+  background-color: #51585e; }
+  #page-wrapper #dev h1 {
+    color: #3a3a3a;
+    margin: 200px 25px;
+    font-family: "Ropa Sans";
+    font-size: 4em;
+    text-transform: uppercase; }
+  #page-wrapper #dev hr {
+    border-top: 1px solid #626d76;
+    border-bottom: 1px solid #43484c; }
+  #page-wrapper #dev #dev-bottom {
+    background-color: #ea5555;
+    width: 100%;
+    min-height: 350px; }

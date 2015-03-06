@@ -6,3 +6,85 @@
   #bio
     background-image: url(../images/headshot.jpg)
     // background-size: 60%
+  #words
+    // background-image: url(../images/werds.png)
+    padding: 250px 90px 100px
+    color: $darkgrey
+    -webkit-column-count: 2 /* Chrome, Safari, Opera */
+    -moz-column-count: 2 /* Firefox */
+    column-count: 2
+    -webkit-column-rule: 1px dashed $darkyellowgrey
+    -moz-column-rule: 1px dashed $darkyellowgrey
+    column-rule: 1px dashed $darkyellowgrey
+    column-fill: auto
+
+    
+    h2, h1
+      font-family: 'Abril Fatface', cursive
+      line-height: 2em
+    h1
+      font-size: 3.5em
+      background-color: $bluegrey
+      color: $yellowgrey
+      width: 100%
+      text-indent: 20px
+
+    h2
+      font-size: 1.8em
+      margin: 10px 0px
+      border-bottom: 1px dashed $darkyellowgrey
+      border-top: 1px dashed $darkyellowgrey
+      display: inline-block
+      width: 100%
+
+      a
+        color: $flatred
+        &:hover
+          color: $lightblue
+    p
+      padding-left: 10px
+      font-family: 'PT Serif', serif
+      font-size: 1.1em
+      display: inline-block
+      width: 100%
+      line-height: 1.5em
+  #feeds
+    background-color: $darkbluegrey
+    font-family: 'Lato', sans-serif
+    font-weight: 900
+    padding: 200px 25px
+    color: $bluegrey
+
+    h1
+      font-size: 3.6em
+      line-height: 1.8em
+      margin: 10px 0px
+      text-transform: uppercase
+    p
+      font-weight: 700
+
+    a
+      color: $flatred
+      padding: 4px
+      font-size: 2em
+      line-height: 2.1em
+      &:hover
+        background-color: $yellowgrey
+
+  #dev
+    background-color: $slategrey
+
+    h1
+      color: $darkgrey
+      margin: 200px 25px
+      font-family: "Ropa Sans"
+      font-size: 4em
+      // text-shadow: 1px -1px 0px $darkbluegrey
+      text-transform: uppercase
+    hr 
+      border-top: 1px solid #626D76
+      border-bottom: 1px solid #43484C
+    #dev-bottom
+      background-color: $flatred
+      width: 100%
+      min-height: 350px

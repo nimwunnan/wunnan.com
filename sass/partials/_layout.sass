@@ -16,6 +16,7 @@ header
     margin-right: 70px
     width: 250px
     padding: 15px 20px
+    clear: both
     li
       color: $white
       float: left
@@ -24,20 +25,35 @@ header
         color: $white
         &:hover
           color: $flatred
-
   #extra-nav 
+    +transition-property(max-height)
+    +transition-duration(1s)
+    max-height: 0px
+    overflow: hidden
+    padding: 0px 20px
+    &.open
+      border-top: 1px dashed $yellowgrey
+      max-height: 300px
+      padding: 15px 20px
+
+  #nav-toggle 
     float: right
     margin-right: 70px
     width: 250px
     clear: both
     padding: 0px 20px
-    border-top: 1px solid $yellowgrey
+    border-top: 1px solid $white
+    &:hover
+      border-top: 1px solid $flatred
     .tab 
       cursor: pointer
       width: 100%
-      background: transparent url(../images/tab.png) center top no-repeat
+      background: transparent url(../images/tab.png) center bottom no-repeat
       height: 25px
       font-size: 0px
+      &:hover
+        background-position: top
+
 
 
 #page-wrapper
@@ -53,6 +69,7 @@ header
     -moz-background-size: cover
     -o-background-size: cover
     background-size: cover
+    overflow: auto
     div.hero
       padding-top: 350px
 
