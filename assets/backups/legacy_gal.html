@@ -1,0 +1,417 @@
+<html><head>
+<title>wunnan.com - Obscured - Part 1</title>
+   <link rel="stylesheet" type="text/css" href="assets/css/common.css" media="all">
+  <link rel="stylesheet" type="text/css" href="assets/css/new.css" media="all">
+  <link href="http://fonts.googleapis.com/css?family=Muli|Metrophobic|Fanwood+Text|IM+Fell+English" rel="stylesheet" type="text/css">
+
+  <base href="http://localhost:8888/w4/">
+<script src="assets/js/jquery-1.6.2.min.js" type="text/javascript"></script>
+<script src="assets/js/jquery.horizontal.scroll.js" type="text/javascript"></script>
+<script src="assets/js/showhide-supergroup.js" type="text/javascript"></script>
+<script src="assets/js/jquery.easing.1.3.js" type="text/javascript"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+  
+ var startSlideshow = function(gal){
+// active elements for this gallery
+    var drawer = '#'+gal.attr("id")+'drawer';
+    var drawer = $(drawer);
+  var displayImg = $('.largeImage', gal);
+  var gallery = $('.gallery', gal);
+  var galleryContainer = $('.galleryContainer', gal);
+  var nav = $('.controls', gal);
+  var description = $('.image-description', gal);
+  var startWidth = parseInt(displayImg.attr('width')); 
+      var startHeight= 0;
+
+// start swapImage ////////////////////   
+  function swapImage(toggle){    
+    if ($(".thumbnail img.active", drawer).length > 0) {
+    }
+    else {
+    var imgSrc=$(".thumbnail", drawer).filter(":first").children('img').addClass('active');
+    } 
+      
+      var lastActive = $('.thumbnail img.active', drawer);
+
+// add detection of first or last images in gallery
+      
+      if (toggle=="prev"){
+      lastActive.parent().prev().children('img').addClass('active');
+    lastActive.removeClass('active');
+      }
+      else if (toggle == "next"){
+    lastActive.parent().next().children('img').addClass('active');
+    lastActive.removeClass('active');
+      }
+// set this after updating .active
+    gallery.addClass('loading');
+    gallery.children("img:first").remove();
+    var activeImg = $('.thumbnail img.active', drawer);
+          var imgSrc=activeImg.next('.link').html();
+    var imgCaption=activeImg.next().next('.caption').html();
+    var imgTitle=activeImg.attr('alt');      
+    
+      var img = new Image();
+        $(img).load(function () {
+      $(this).hide();
+      gallery.append(this);
+      gallery.removeClass('loading');
+    var currentHeight = 300;
+// figure out image dimensions    
+    if (gallery.hasClass('fullscreen')){
+    $(this).css('max-width', ($(window).width()-90));
+    $(this).css('max-height', ($(window).height()-90));
+      currentHeight = $(window).height();
+    }
+// w4 only
+    
+    else if(gallery.hasClass('splashy')) {
+
+   $(this).css({'max-height': $('#splash').height(), 
+      'max-width': $('#splash').width(), 
+             });
+      currentHeight = ($('#splash').height());
+    }
+   
+// end w4 only
+    
+    else {
+        if (activeImg.width() > activeImg.height()){
+            $(this).removeAttr('height');
+          $(this).attr('width', gallery.css("width")); 
+        }
+        else {
+          $(this).removeAttr('width');
+        $(this).attr('height', startHeight);    
+        }
+        currentHeight = $(this).height();
+    }
+            
+    gallery.animate({height: currentHeight}, 500, function(){       
+          $(img).fadeIn(function(){
+          $('.title', description).html(imgTitle);
+        $('.caption', description).html(imgCaption);        
+          });
+      });
+    }).attr({
+      src: imgSrc,
+      alt: imgTitle,
+        class: 'largeImage'}); 
+    }    
+// end swapImage ////////////////////
+   
+ // this should probably happen elsewhere
+    displayImg.load(function(){
+
+// set new height value
+      startHeight = parseInt(displayImg.height());     
+
+// enable key navigation
+    $(document).keydown(function(event) {
+      switch (event.keyCode) {
+        case 37: swapImage('prev'); break;
+        case 39: swapImage('next'); break;
+  //      case 27: $('#fullscreen').trigger('click');
+      }
+    });
+    });
+      
+
+// overlay button functions
+  $('.overlay', gal).click(function(){
+    $('.gallery, .gallery-container', gal).animate({width:startWidth, height:startHeight}, 500, function(){
+      gallery.removeClass('collapsed');
+      gallery.removeClass('open');
+      $('.overlay', gal).toggle();
+      drawer.toggle('slow');      
+      description.css({'width':startWidth});
+      description.show();
+      });
+
+    });
+   
+  
+    /* figure out how to preserve this function after unloading and reloading the image. 
+    $('#largeImage').bind('click', swapImage("next"));  
+  });
+  */
+
+   
+  $('.thumbnail img', drawer).click(function(){
+    $('.thumbnail img.active', drawer).removeClass('active');
+    $(this).addClass('active');
+    swapImage();        
+  });
+  
+    $('.previous', nav).click(function(){
+          swapImage('prev');
+      });
+  $('.next', nav).click(function(){
+       swapImage('next');
+      });
+       
+$(".fullscreen", nav).click(function(){
+
+      var windowWidth = $(window).width();
+      var windowHeight = $(window).height();
+      var imgRatio = displayImg.width()/displayImg.height();
+      var browserRatio = windowWidth / windowHeight;
+      var ratioDisparity = imgRatio / browserRatio;
+      
+// check to see if the image is already fullscreen
+     if (gallery.hasClass('fullscreen')){
+
+       // reset the icon and view size 
+       gallery.removeClass('fullscreen');
+       gallery.addClass('open');
+       gallery.css({'postion':'relative'});
+       $(this).css({'background-position':'0px 0px'});
+    windowWidth = startWidth;
+     }
+     
+     else{
+       //    gallery.addClass('fullscreen');
+      // change the icon 
+       $(this).css({'background-position':'0px -11px'});
+   }
+         
+       var galContainerCSS = {
+        'border' : '0px none',
+        'padding' : '0px',
+    'width' : windowWidth,
+    'position': 'absolute'
+      };
+
+      var controlsCSS = {
+        'position' : 'absolute',
+        'z-index' : '500',
+    'width' : windowWidth,
+    'top' : '0px'
+      };
+
+    drawer.hide();
+    description.css(controlsCSS);
+        gallery.css(galContainerCSS);
+      //activeImg.width(windowWidth);
+        swapImage();
+    });     
+    
+    
+    $(".drawer-toggle", nav).click(function(){
+      drawer.toggle('slow');
+    });
+
+   //   if (callback){return callback;}
+}
+// end startSlideshow ////////////////////
+
+      $('.galleryContainer').each(function(){startSlideshow($(this));});
+ });
+   
+
+ </script>
+
+<script type="text/javascript">
+
+// there's something goofy about supersize that triggers mouse events which aren't in the scope of another 
+// function within document.ready. so bind them up here with live()
+    
+    $('#tag-menu ul li').live({
+            mouseover: function(){
+        $(this).animate({top: '-5px'}, 160, 'easeInCirc');
+        },
+          mouseleave: function(){
+        $(this).animate({top: '-18px'}, 300, 'easeOutBounce');
+        }});
+  
+
+    
+(function($){
+//Resize image on ready or resize
+$.fn.supersize = function(size, topsize) {
+//Invoke the resizenow() function on document ready
+$(document).ready(function() {
+$('#splash').resizenow(size, topsize);
+});
+//Invoke the resizenow() function on browser resize
+$(window).bind("resize", function() {
+$('#splash').resizenow(size, topsize);
+});
+};
+//Adjust image size
+$.fn.resizenow = function(size, topsize) {
+  
+  var browserheight = $(window).height();
+  var browserwidth = $(window).width();
+
+  if(size){
+
+    $(this).height(browserheight - size);   
+  }
+  
+  else{
+      $(this).height(browserheight - 310); }
+      $(this).width(browserwidth - 90); 
+    if (topsize){
+      $(this).css('top', topsize);
+    }
+    else {  $(this).css('top', '273px');
+ }
+  $('.gallery').css({'height': $('#splash').height(), 
+              'width': $('#splash').width()
+             });
+};
+})(jQuery);
+    
+
+</script>
+  <script type="text/javascript"> 
+    $('.drawer').live({
+            mouseover: function(){
+        $(this).animate({bottom: '0px'}, 160, 'easeOutCirc');
+        },
+          mouseleave: function(){
+        $(this).animate({bottom:  '-64px'}, 160, 'easeInCirc');
+        }});    
+$(document).ready(function() {
+  
+  
+  
+
+           /*
+          function(){
+          $(this).animate({top: 0}, 1500, "easeOutElastic",
+        function(){
+          $(this).css(top, -16);
+        });
+        });
+*/
+
+//Invoking the supersized function on the div with id - supersize. It is the div that contains the large background image
+
+  $("div#splash").supersize(310, '273px');
+  var marginheight = $(window).height() - 90;
+ 
+   
+  $('.overlay h2').click(function(){
+ 
+    $('#splash').animate({top: 50, height: marginheight}, 1500);
+    $('#content').animate({opacity: 'toggle'}, 
+        1250, function(){ 
+          $('#content').hide();
+         
+          
+          $('.gallery').height($('#splash').height()+15); 
+          $('.largeImage').css({'max-height': ($('#splash').height()+15), 
+              'max-width': $('#splash').width(), 
+             });
+          
+          $('.gallery').fadeIn();
+          //  $('.galleryContainer').each(function(){startSlideshow($(this));});
+        });
+    $(window).unbind("resize");
+    $(window).bind("resize", function() {
+  $('#splash').resizenow(90, '45px');
+      //    startSlideshow.swapImage();
+  });
+  });
+
+});
+
+
+</script>
+
+
+  
+</head>
+<body class="article" data-feedly-mini="yes">
+<div id="wrapper">
+
+  
+  <div id="inner-wrapper">
+ 
+    
+    <div id="content">
+     <h2 class="article-title">Obscured - Part 1</h2>
+      <div class="article-content">  <p>Ink and graphite paintings exploring journalistic images of extraordinary events and experiences. The intensity of the subject matter can be seductive, but the attraction to the representations can stand in the way of understanding the thing represented. The clear and frequent depiction of these subjects can lull viewers into believing that they understand the real events that prompted the representation, or that the representation has directly communicated something.&nbsp;</p></div>    
+    </div>
+
+  </div>
+  <!-- end inner-wrapper -->
+  <div class="splash-border">&nbsp;  
+  </div>
+
+  </div>
+  <div id="splash" style="height: 574px; width: 1217px; top: 273px; background-image: url(https://lh4.googleusercontent.com/-Oo0-6xca4F8/TvbRtWBcJGI/AAAAAAAAA6c/WnwvNzUftZQ/s1600/haiti2-detail.jpg);">
+    <div class="galleryContainer" id="5689965721980929761" style="width:100%; overflow:show;">
+      <div class="overlay">
+  <h1 style="display:none">Obscured 1</h1>
+        <h2 style="color:whitesmoke;">Start Slideshow &gt;</h2>
+  </div>
+<div class="gallery splashy" style="height: 574px; width: 1217px;">
+    <div class="image-description">
+    <div class="title">Navigate with arrow keys, the thumbnails below, or those buttons over there --&gt;</div>
+      <div class="caption">&nbsp;</div>
+          <div class="controls">
+      <div class="previous">&lt;</div>
+        <div class="next">&gt;</div>
+      <div class="fullscreen">&nbsp;</div>
+      <div class="drawer-toggle">&nbsp;</div>
+        <div class="description-toggle"><em>i</em></div>
+
+    </div>
+  </div>
+  
+  <img class="largeImage" src="https://lh5.googleusercontent.com/-CXmRVdCEjPc/TvbRrWrShuE/AAAAAAAACfw/Gj8Jo2xOlrQ/s1600/Obscured1.jpg">
+</div>
+</div>
+
+
+    </div>
+
+    <div class="drawer splashy" id="5689965721980929761drawer" style="display:none">
+      
+<div class="thumbnail" style=" padding:10px;">
+  <img src="https://lh6.googleusercontent.com/-Hc82SxIb4EI/UjrBSSvWvzI/AAAAAAAACfs/59l9yDHqwrM/s72/Ryugyong%252520Hotel.jpg" alt="Ryugyong Hotel.jpg" height="48">
+  <span class="jqgal link">https://lh6.googleusercontent.com/-Hc82SxIb4EI/UjrBSSvWvzI/AAAAAAAACfs/59l9yDHqwrM/s1600/Ryugyong%252520Hotel.jpg</span>
+  <span class="jqgal caption">Ink on mylar 37” x 56” 2010<p></p>
+</span></div>
+
+
+<div class="thumbnail" style=" padding:10px;">
+  <img src="https://lh6.googleusercontent.com/--FlJaV2THEM/TvbRtBWD5HI/AAAAAAAAA6Y/brfO1NyB6gg/s72/thewhale.jpg" alt="thewhale.jpg" height="48">
+  <span class="jqgal link">https://lh6.googleusercontent.com/--FlJaV2THEM/TvbRtBWD5HI/AAAAAAAAA6Y/brfO1NyB6gg/s1600/thewhale.jpg</span>
+  <span class="jqgal caption"><p></p>
+</span></div>
+
+
+<div class="thumbnail" style=" padding:10px;">
+  <img src="https://lh6.googleusercontent.com/-CpnFk_LN7o0/TvbRswx0iUI/AAAAAAAAA6U/XpIWj-8irmQ/s72/gulf-coast-islands.jpg" alt="gulf-coast-islands.jpg" height="48">
+  <span class="jqgal link">https://lh6.googleusercontent.com/-CpnFk_LN7o0/TvbRswx0iUI/AAAAAAAAA6U/XpIWj-8irmQ/s1600/gulf-coast-islands.jpg</span>
+  <span class="jqgal caption"><p></p>
+</span></div>
+
+
+<div class="thumbnail" style=" padding:10px;">
+  <img src="https://lh4.googleusercontent.com/-Oo0-6xca4F8/TvbRtWBcJGI/AAAAAAAAA6c/WnwvNzUftZQ/s72/haiti2-detail.jpg" alt="haiti2-detail.jpg" height="48">
+  <span class="jqgal link">https://lh4.googleusercontent.com/-Oo0-6xca4F8/TvbRtWBcJGI/AAAAAAAAA6c/WnwvNzUftZQ/s1600/haiti2-detail.jpg</span>
+  <span class="jqgal caption"><p></p>
+</span></div>
+
+
+<div class="thumbnail" style=" padding:10px;">
+  <img src="https://lh6.googleusercontent.com/-aXFrt8GBNPI/TvbRtm8h9ZI/AAAAAAAAA6g/vF0Z3Q8NUd0/s72/haiti2.jpg" alt="haiti2.jpg" height="48">
+  <span class="jqgal link">https://lh6.googleusercontent.com/-aXFrt8GBNPI/TvbRtm8h9ZI/AAAAAAAAA6g/vF0Z3Q8NUd0/s1600/haiti2.jpg</span>
+  <span class="jqgal caption"><p></p>
+</span></div>
+
+    </div>
+
+      
+ 
+    <!-- end wrapper -->
+
+
+</body></html>

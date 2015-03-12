@@ -1,1 +1,10 @@
 .sass-cache
+_build
+manager
+core
+connectors
+config.core.php
+README.md
+setup
+.htaccess
+assets/components

@@ -1,0 +1,47 @@
+<html>
+<head>
+<title>[[++site_name]] - [[*pagetitle]]</title>
+  [[$head]]
+    
+
+[[$jq]]
+[[$jqGallery]]
+[[$menuAndResize]]
+  [[$articleOnReady]]
+
+
+  
+</head>
+<body class="article">
+<div id="wrapper">
+
+  
+  <div id="inner-wrapper">
+ 
+    
+    <div id="content">
+     <h2 class="article-title">[[*pagetitle]]</h2>
+      <div class="article-content">  [[*content]]</div>    
+    </div>
+
+  </div>
+  <!-- end inner-wrapper -->
+  <div class="splash-border">&nbsp;  
+  </div>
+
+  </div>
+  <div id="splash" style="background-image:url([[*splash]]);">
+    <div class="galleryContainer" id="[[!getAlbumID? &url=`[[*gallery]]`]]" style="width:100%; overflow:show;">
+      [[!picasaGal? &gallery=`[[*gallery]]` &slideshow=`1`]]
+    </div>
+
+    <div class="drawer splashy" id="[[!getAlbumID? &url=`[[*gallery]]`]]drawer" style="display:none">
+      [[!picasaGal? &gallery=`[[*gallery]]` ]]
+    </div>
+
+  </div>    
+ </div>
+    <!-- end wrapper -->
+
+</body>
+</html>

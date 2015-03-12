@@ -1,0 +1,11 @@
+[{
+    "name": "example_text_tv",
+    "caption": "Example Text TV",
+    "type": "text"
+
+},{
+    "name": "example_image_tv",
+    "caption": "Example Image TV",
+    "type": "image",
+    "template_access": ["home"]
+}]
