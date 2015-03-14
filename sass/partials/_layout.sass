@@ -8,15 +8,21 @@ header
   width: 100%
   top: 0px
   z-index: 15000
-  background: transparent url(../images/wbug.png) 10px 10px no-repeat
   font-family: "Lato", sans-serif
   font-weight: bold
+  div.bug
+    background: transparent url(../images/wbug.png) 10px 10px no-repeat
+    @include image-2x("../images/wbug@2x.png", 75px, 54px)
+    float: left
+    height: 75px
+    min-width: 83px
+    p 
+      display: none
   ul
     float: right
     margin-right: 70px
     width: 250px
     padding: 15px 20px
-    clear: both
     li
       color: $white
       float: left
@@ -27,10 +33,11 @@ header
           color: $flatred
   #extra-nav 
     +transition-property(max-height)
-    +transition-duration(1s)
+    +transition-duration(.2s)
     max-height: 0px
     overflow: hidden
     padding: 0px 20px
+    clear: both
     &.open
       border-top: 1px dashed $yellowgrey
       max-height: 300px
@@ -48,11 +55,17 @@ header
     .tab 
       cursor: pointer
       width: 100%
-      background: transparent url(../images/tab.png) center bottom no-repeat
+      background: transparent url(../images/tab.png) center -51px no-repeat
+      @include image-2x("../images/tab@2x.png", 31px, auto)
+      float: left
       height: 25px
       font-size: 0px
+      &.open
+        background-position: center -77px      
       &:hover
-        background-position: top
+        background-position: center top
+        &.open
+          background-position: center -26px      
 
 
 
@@ -72,7 +85,10 @@ header
     overflow: auto
     div.hero
       padding-top: 350px
-
+  .half
+    float: left
+    width: 50%
+    box-sizing: border-box
 
 #frame
   position: fixed
@@ -82,3 +98,4 @@ header
   margin: 0px
   bottom: 0px
   background: $yellowgrey
+

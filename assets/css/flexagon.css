@@ -1,0 +1,192 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0px;
+  overflow: auto;
+  background: whitesmoke; }
+
+.page_wrapper {
+  height: 100vh;
+  margin: 0px;
+  padding: 0px; }
+
+.fgGallery {
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  box-sizing: content-box;
+  padding-top: 45px; }
+  .fgGallery.loading {
+    background: url(loading.gif) no-repeat center center; }
+    .fgGallery.loading img {
+      display: none; }
+
+.fgDrawer {
+  float: left;
+  width: 100%;
+  padding: 20px; }
+
+img.fgDisplay {
+  cursor: pointer;
+  box-sizing: content-box;
+  border: solid 1px #b5b9bd; }
+
+.article {
+  height: 100vh;
+  width: 100%;
+  background: whitesmoke;
+  position: absolute;
+  z-index: 10000; }
+  .article h1 {
+    color: #b5b9bd;
+    font-family: 'Ropa Sans', helvetica, sans-serif;
+    text-align: center;
+    width: 400px;
+    font-size: 2em;
+    line-height: 2.5em;
+    overflow: auto;
+    border-top: 1px solid #eae9df;
+    border-bottom: 1px solid #eae9df;
+    margin: 45px auto; }
+  .article div.content {
+    max-width: 600px;
+    margin: 20px auto;
+    color: #51585e;
+    font-family: 'Ropa Sans', helvetica, sans-serif;
+    text-align: left;
+    font-size: 1.6em; }
+
+.fgWrapper {
+  width: 100%;
+  top: 0;
+  height: 95vh; }
+
+.titlecard {
+  position: absolute;
+  z-index: 5000;
+  right: 10px;
+  top: 8px; }
+  .titlecard .fgInfo {
+    background-color: #f1f1f1;
+    border: 1px solid #eae9df;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    width: 400px;
+    min-height: 200px;
+    padding: 15px;
+    color: #b5b9bd;
+    font-family: 'DIN', helvetica, sans-serif;
+    opacity: 0;
+    -webkit-transition: opacity .3s;
+    transition: opacity .3s;
+    overflow: auto; }
+    .titlecard .fgInfo p {
+      font-size: 1em;
+      line-height: 1.1em;
+      margin: 5px 5px; }
+  .titlecard .fgTitle {
+    margin-bottom: 0px;
+    padding-bottom: 10px;
+    font-size: 1.2em;
+    line-height: 1.4em;
+    color: #b5b9bd;
+    border-bottom: 1px solid #eae9df; }
+  .titlecard .fgCaption {
+    border-top: 1px solid whitesmoke;
+    margin-top: 0px;
+    padding-top: 5px; }
+
+div.controls {
+  background: transparent;
+  color: #b5b9bd;
+  font-family: helvetica;
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: bold;
+  padding: 0px;
+  width: 100%;
+  height: 45px;
+  bottom: 0;
+  right: 0px; }
+  div.controls #control-wrapper {
+    width: 200px;
+    float: right;
+    margin-right: 20px; }
+    div.controls #control-wrapper div {
+      float: right; }
+  div.controls .previous {
+    padding-right: 8px; }
+  div.controls .next {
+    padding-left: 7px; }
+  div.controls .previous, div.controls .next {
+    padding-top: 2px;
+    height: 45px;
+    float: right;
+    background: transparent;
+    /*padding-left: 15px;*/
+    cursor: pointer; }
+    div.controls .previous:hover, div.controls .next:hover {
+      color: #51585e; }
+  div.controls .thumbnail img.active {
+    border: solid gold 2px; }
+  div.controls .thumbnail img {
+    border: solid white 2px; }
+
+.fgThumb {
+  float: left; }
+  .fgThumb img {
+    max-height: 100px;
+    cursor: pointer; }
+  .fgThumb span {
+    display: none; }
+
+#thmbs {
+  background-color: transparent;
+  height: 37px;
+  width: 43px;
+  float: left;
+  cursor: pointer; }
+  #thmbs span {
+    font-size: 0px;
+    width: 10px;
+    height: 9px;
+    border-left: 1px solid #eae9df;
+    border-bottom: 1px solid  #D2D1C6;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    display: block;
+    float: left;
+    margin: 2px; }
+
+#thmbs:hover span {
+  border-right: 1px solid #eae9df;
+  border-top: 1px solid  #D2D1C6;
+  border-bottom: 1px solid white;
+  border-left: 1px solid white; }
+
+#info-toggle {
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  border: solid 1px #eae9df;
+  background-color: transparent;
+  height: 37px;
+  width: 54px;
+  float: right;
+  padding: 4px;
+  margin: 2px 10px;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 8px; }
+  #info-toggle:hover {
+    background: #f1f1f1; }
+  #info-toggle span {
+    border-top: 1px solid #eae9df;
+    border-bottom: 1px solid white;
+    height: 0px;
+    width: 95%;
+    display: block;
+    margin: 2px; }

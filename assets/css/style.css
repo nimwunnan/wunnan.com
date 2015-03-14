@@ -144,15 +144,25 @@ header {
   width: 100%;
   top: 0px;
   z-index: 15000;
-  background: transparent url(../images/wbug.png) 10px 10px no-repeat;
   font-family: "Lato", sans-serif;
   font-weight: bold; }
+  header div.bug {
+    background: transparent url(../images/wbug.png) 10px 10px no-repeat;
+    float: left;
+    height: 75px;
+    min-width: 83px; }
+    @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+      header div.bug {
+        /* on retina, use image that's scaled by 2 */
+        background-image: url("../images/wbug@2x.png");
+        background-size: 75px 54px; } }
+    header div.bug p {
+      display: none; }
   header ul {
     float: right;
     margin-right: 70px;
     width: 250px;
-    padding: 15px 20px;
-    clear: both; }
+    padding: 15px 20px; }
     header ul li {
       color: white;
       float: left;
@@ -166,13 +176,14 @@ header {
     -moz-transition-property: max-height;
     -o-transition-property: max-height;
     transition-property: max-height;
-    -webkit-transition-duration: 1s;
-    -moz-transition-duration: 1s;
-    -o-transition-duration: 1s;
-    transition-duration: 1s;
+    -webkit-transition-duration: 0.2s;
+    -moz-transition-duration: 0.2s;
+    -o-transition-duration: 0.2s;
+    transition-duration: 0.2s;
     max-height: 0px;
     overflow: hidden;
-    padding: 0px 20px; }
+    padding: 0px 20px;
+    clear: both; }
     header #extra-nav.open {
       border-top: 1px dashed #eae9df;
       max-height: 300px;
@@ -189,11 +200,21 @@ header {
     header #nav-toggle .tab {
       cursor: pointer;
       width: 100%;
-      background: transparent url(../images/tab.png) center bottom no-repeat;
+      background: transparent url(../images/tab.png) center -51px no-repeat;
+      float: left;
       height: 25px;
       font-size: 0px; }
+      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+        header #nav-toggle .tab {
+          /* on retina, use image that's scaled by 2 */
+          background-image: url("../images/tab@2x.png");
+          background-size: 31px auto; } }
+      header #nav-toggle .tab.open {
+        background-position: center -77px; }
       header #nav-toggle .tab:hover {
-        background-position: top; }
+        background-position: center top; }
+        header #nav-toggle .tab:hover.open {
+          background-position: center -26px; }
 
 #page-wrapper {
   overflow: auto;
@@ -211,6 +232,10 @@ header {
     overflow: auto; }
     #page-wrapper section div.hero {
       padding-top: 350px; }
+  #page-wrapper .half {
+    float: left;
+    width: 50%;
+    box-sizing: border-box; }
 
 #frame {
   position: fixed;
@@ -270,18 +295,27 @@ header {
   font-weight: 900;
   padding: 200px 25px;
   color: #acb5bb; }
+  #page-wrapper #feeds.open {
+    height: auto;
+    overflow: auto; }
+  #page-wrapper #feeds .feedLink.spie-odd-row {
+    background-color: #acb5bb; }
+  #page-wrapper #feeds div.half.feed {
+    display: none; }
   #page-wrapper #feeds h1 {
     font-size: 3.6em;
     line-height: 1.8em;
     margin: 10px 0px;
     text-transform: uppercase; }
   #page-wrapper #feeds p {
-    font-weight: 700; }
+    font-weight: 700;
+    padding: 10px; }
   #page-wrapper #feeds a {
     color: #ea5555;
     padding: 4px;
     font-size: 2em;
-    line-height: 2.1em; }
+    line-height: 1.6em;
+    text-transform: capitalize; }
     #page-wrapper #feeds a:hover {
       background-color: #eae9df; }
 #page-wrapper #dev {

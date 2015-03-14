@@ -1,7 +1,8 @@
 [{
-    "name": "example_text_tv",
-    "caption": "Example Text TV",
-    "type": "text"
+    "name": "picasaLink",
+    "caption": "Google Photos RSS Feed",
+    "type": "text",
+    "template_access": ["gallery"]
 
 },{
     "name": "example_image_tv",

@@ -54,7 +54,14 @@
     font-weight: 900
     padding: 200px 25px
     color: $bluegrey
-
+    &.open
+      height: auto
+      overflow: auto
+    .feedLink.spie-odd-row
+      background-color: $bluegrey
+    div.half
+      &.feed
+        display: none  
     h1
       font-size: 3.6em
       line-height: 1.8em
@@ -62,12 +69,14 @@
       text-transform: uppercase
     p
       font-weight: 700
+      padding: 10px
 
     a
       color: $flatred
       padding: 4px
       font-size: 2em
-      line-height: 2.1em
+      line-height: 1.6em
+      text-transform: capitalize
       &:hover
         background-color: $yellowgrey
 

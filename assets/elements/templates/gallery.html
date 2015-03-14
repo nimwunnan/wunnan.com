@@ -7,7 +7,12 @@
     $(document).ready(function(){
     $('#gallery').flexagon({margin:"90"});
     $('#gallery').flexagon('galToggle');
-
+    // $(".fgThumb > img").attr("src") = $(".fgThumb > img").attr("src").replace(/s72/, "s180");
+    // $(".fgThumb img").each(function(i, obj){
+    //   var newstr = $(obj).attr("src").replace(/s72/, "s180");
+    //   $(obj).attr("src", newstr);
+    // });
+// console.log(newstr);
     $(".fgThumb").click(function(){$(".article").fadeOut('slow'); $('.fgWrapper').show();});
     $('#thmbs').click(function(){$(".article").fadeIn('slow');});
 
@@ -54,10 +59,10 @@
 <div class="article">
 
 <div class="fgDrawer" id="fgDrawer">
-
-      [[!getXML? &root=`[[*picasaLink]]&imgmax=1600u` &tpl=`fgThumb`]]
+      [[!getXML? &url=`[[!pcReplace? &url=`[[*picasaLink]]`]]` &root=`rss/channel/item` &tpl=`fgThumb`]]
 </div>
 <h1 class="title">[[*pagetitle]]</h1>
+<div class="content">[[*content]]</div>
 <!--END DRAWER  -->
 
 </div>
