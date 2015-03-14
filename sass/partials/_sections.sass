@@ -10,13 +10,15 @@
     // background-image: url(../images/werds.png)
     padding: 250px 90px 100px
     color: $darkgrey
-    -webkit-column-count: 2 /* Chrome, Safari, Opera */
-    -moz-column-count: 2 /* Firefox */
-    column-count: 2
-    -webkit-column-rule: 1px dashed $darkyellowgrey
-    -moz-column-rule: 1px dashed $darkyellowgrey
-    column-rule: 1px dashed $darkyellowgrey
-    column-fill: auto
+    height: auto
+    overflow: auto
+    // -webkit-column-count: 2 /* Chrome, Safari, Opera */
+    // -moz-column-count: 2 /* Firefox */
+    // column-count: 2
+    // -webkit-column-rule: 1px dashed $darkyellowgrey
+    // -moz-column-rule: 1px dashed $darkyellowgrey
+    // column-rule: 1px dashed $darkyellowgrey
+    // column-fill: auto
 
     
     h2, h1
@@ -80,19 +82,35 @@
       &:hover
         background-color: $yellowgrey
 
-  #dev
+  #social
     background-color: $slategrey
+    font-family: "Ropa Sans"
+    padding-top: 15%
+    text-align: center
 
+    a
+      color: $white
+      clear: both
+      padding: 40px 15px
+      text-decoration: none
+      font-size: 3em
+      &:hover
+        color: $flatred
     h1
       color: $darkgrey
-      margin: 200px 25px
-      font-family: "Ropa Sans"
+      margin: 20px 25px
       font-size: 4em
       // text-shadow: 1px -1px 0px $darkbluegrey
       text-transform: uppercase
     hr 
       border-top: 1px solid #626D76
       border-bottom: 1px solid #43484C
+    #hr-wrap
+      width: 100%
+      float: left
+      padding: 50px
+      box-sizing: border-box
+      
     #dev-bottom
       background-color: $flatred
       width: 100%
