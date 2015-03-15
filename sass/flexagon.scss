@@ -47,7 +47,8 @@ body {
     float: left;
     width: 100%;
     padding: 20px;
-
+    text-align: center;
+    margin: 45px 0px;
 }
 img.fgDisplay { 
     cursor: pointer;
@@ -61,10 +62,10 @@ img.fgDisplay {
     position: absolute;
     z-index: 10000;
     h1 {
-        color: $lightbluegrey;
-        font-family: 'Ropa Sans', helvetica, sans-serif;
+        width: 600px;
+        color: $bluegrey;
+        font-family: 'Lato', helvetica, sans-serif;
         text-align: center;
-        width: 400px;
         font-size: 2em;
         line-height: 2.5em;
         overflow: auto;
@@ -77,9 +78,10 @@ img.fgDisplay {
         max-width: 600px;
         margin:20px auto;
         color: $bluegrey;
-        font-family: 'Ropa Sans', helvetica, sans-serif;
+        font-family: 'Lato', helvetica, sans-serif;
         text-align: left;
-        font-size: 1.6em;
+        font-size: 1.2em;
+        line-height: 1.4em;
     }
 }
 
@@ -193,7 +195,11 @@ div.controls {
 }
 
 .fgThumb {
-  float: left;
+  display: inline-block;
+  border: 1px solid $white;
+  &:hover {
+    border: 1px solid $lightbluegrey;
+      }
   img {
    max-height: 100px;
    cursor: pointer;

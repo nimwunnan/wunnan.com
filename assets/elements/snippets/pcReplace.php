@@ -6,6 +6,7 @@ if ($thmb){
 }
 if ($title){
   $output = substr($title, 0, -4);
+  $output = str_replace('-', ' ', $output);
 }
 if ($url){
   $feed1 = "https://picasaweb.google.com/data/feed/base/user/114792295114377258891/albumid/";

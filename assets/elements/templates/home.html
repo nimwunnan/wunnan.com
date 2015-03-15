@@ -5,13 +5,13 @@
     <script type="text/javascript">
       $(document).ready(function(){ 
        $(".tab").click(function(){
-        if ($('#extra-nav').hasClass("open")){
-          $('#extra-nav').removeClass("open");
+        if ($('#nav').hasClass("open")){
+          $('#nav').removeClass("open");
           $('.tab').removeClass("open");
 
         }
         else {
-          $('#extra-nav').addClass("open");          
+          $('#nav').addClass("open");          
           $('.tab').addClass("open");          
         }
       });
@@ -25,20 +25,33 @@
        });
 
 // smooth scroll from https://css-tricks.com/snippets/jquery/smooth-scrolling/
-    $(function() {
-      $('a[href*=#]:not([href=#])').click(function() {
-        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-          var target = $(this.hash);
-          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-          if (target.length) {
-            $('html,body').animate({
-              scrollTop: target.offset().top
-            }, 1000);
-            return false;
-          }
-        }
+    // $(function() {
+    //   $('a[href*=#]:not([href=#])').click(function() {
+    //     if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+    //       var target = $(this.hash);
+    //       target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+    //       if (target.length) {
+    //         $('html,body').animate({
+    //           scrollTop: target.offset().top
+    //         }, 1000);
+    //         return false;
+    //       }
+    //     }
+    //   });
+    // });
+  $('a[href^="#"]').on('click',function (e) {
+      e.preventDefault();
+
+      var target = this.hash;
+      var $target = $(target);
+
+      $('html, body').stop().animate({
+          'scrollTop': $target.offset().top
+      }, 900, 'swing', function () {
+          window.location.hash = target;
       });
-    });
+  });
+
     });   
     </script>
 </head>
@@ -46,21 +59,26 @@
 <header>
 <a class="bug" href="#landing" id="site-description">
 </a>
-  <ul id="nav">
+<div id="nav-wrapper">
+  <ul id="nav" class="open">
     <li><a href="#art">Art</a> // </li>
     <!-- <li><a href="#synesthesia">Bi</a> // </li> -->
     <li><a href="#words">Words</a> // </li>
         <li><a href="#bio">Bio</a> // </li>
+        <li><a href="#place-and-time">Snapshots</a> // </li>
     <!-- <li><a href="#dev">Web Production</a></li> -->
-  </ul>
-  <ul id="extra-nav">
-    <li><a href="#feeds">Results of Curiosity</a> \\ </li>
-    <li><a href="#social">How to Find Me</a> \\ </li>
+    <li><a href="#feeds">Curiosity</a> // </li>
+    <li><a href="#social">Social</a> \\ </li>
     <!-- <li><a href="#friends">Friends</a></li> -->
-   </ul>
-  <div id="nav-toggle">
-   <div class="tab">Extended Navigation</div>
+  </ul>
+ <div id="nav-toggle">
+   <div class="tab open">Extended Navigation</div>
   </div>
+</div>
+
+<!--   <ul id="extra-nav">
+   </ul>
+ -->  
 </header>
   <div id="page-wrapper">
     <section id="landing">
@@ -110,67 +128,84 @@
           </div>
       </div>
     </section>
-    <section id="social">
-      <h1>You can find me on these internets</h1>
-    <div id="hr-wrap">
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-      <hr>
-    </div>
-      <a href="http://twitter.com/nimwunnan" id="twitter" target="_blank">Twitter</a>
-      <a href="https://medium.com/@nimwunnan" id="medium" target="_blank">Medium</a>
-      <a href="https://www.youtube.com/playlist?list=FLJPG0R63yENQk12C9cgTnfg" id="youtube" target="_blank">YouTube</a>
-      <a href="http://www.metafilter.com/user/45324" id="metafilter" target="_blank">MetaFilter</a>
-      <a href="https://instagram.com/middlefingerasaurus/" id="instagram" target="_blank">Instagram</a>
-      <a href="http://nimwunnan.tumblr.com/" id="tumblr" target="_blank">Tumblr</a>
-    </section>
     <section id="bio">
+    <div>
+    <p>I studied <a href="#art">painting</a> at <a href="http://www.gsa.ac.uk/" target="_blank">the Glasgow School of Art</a> I keep a <a href="#">studio</a> in SE Industrial Portland, which is for rent when I'm traveling.</p>
+    <p>I founded this <a href="http://research-club.org/" target="_blank">Research Club</a> but definitely not <a href="https://www.theresearchclub.com/" target="_blank">this one</a>. <a href="http://twitter.com/reserachclub">I would love to talk to you about alternative education projects.</a></p>
+      <p>
+        I produce websites and projects with the brilliant delinquents at <a href="http://bletcheley.co">Bletchley Park</a>
+      </p>
+      <p>I worked in rare books for 7 years before I did any of that with <a href="http://www.dawntreaderbooks.com/" target="_blank">some</a> wonderful <a href="http://www.pirages.com/" target="_blank">people</a></p>
+      <p>I've got a heavy case of <a href="http://www.thesynesthesianetwork.com/users/nim" target="_blank">synesthesia</a> and am working on a <a href="https://docs.google.com/document/d/1EsEUJHv_1CUvUTy34wVR1ECkqBpakKRsKEav9ZB_zto/edit#heading=h.nxi67yf5kimh" target="_blank">synesthesia starter kit</a> with the good people of <a href="http://www.reddit.com/r/Synesthesia/" target="_blank">r/Synesthesia</a>. Contributors welcome.</p>
+      <p>I love Tai Chi and practice <a href="https://www.youtube.com/watch?v=2pu4Wic-YJ4" target="_blank">Sun</a> and <a href="https://www.youtube.com/watch?v=USJPmCZ6Efc" target="_blank">Chen Man Ching</a> style, often with the <a href="https://www.youtube.com/watch?v=S-eM1-3ew28" target="_blank">talented and patient folks</a> who meet in Laurlhurst Park in Portland, OR.</p>
+            <a class="photo-credit" href="https://instagram.com/othrondir/" target="_blank">Photo by Alex Black</a>
+    </div>
     </section>
     <section id="words">
-    <div class="half">
-      <h1>Nonfiction</h1>
-      <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-      <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p> 
-      <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Nancy Drew and the Case of Writer's Block</a></h2>
-      <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
-     <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-      <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p>
-      <h1>Reviews</h1>
-      <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-      <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
-
-      </div>
       <div class="half">
-      <h1>Fiction</h1>
+        <h1>Nonfiction</h1>
+        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
+        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p> 
+        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Nancy Drew and the Case of Writer's Block</a></h2>
+        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
+       <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
+        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p>
+        <h1>Reviews</h1>
+        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
+        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
+        </div>
+        <div class="half">
+        <h1>Fiction</h1>
 
-      <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-      <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
-     <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-      <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p> 
-</div>
+        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
+        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
+       <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
+        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p> 
+      </div>
+    </section>
+    <section id="place-and-time">
+    <h1>Place and Time</h1>
+    <div>
+      <p><a href="#">That time I lived on my friend's boat</a></p>
+      <p><a href="#">That time we went to Joshua tree</a></p>
+    </div>
+    </section>
+    <section id="social">
+    <div id="social-wrap">
+      <div id="hr-wrap">
+        <hr>
+        <hr>
+        <hr>
+      </div>
+      <div id="social-links">
+        <a href="http://twitter.com/nimwunnan" id="twitter" target="_blank">Twitter</a>
+        <a href="https://medium.com/@nimwunnan" id="medium" target="_blank">Medium</a>
+        <a href="https://www.youtube.com/playlist?list=FLJPG0R63yENQk12C9cgTnfg" id="youtube" target="_blank">YouTube</a>
+        <a href="http://www.metafilter.com/user/45324" id="metafilter" target="_blank">MetaFilter</a>
+        <a href="https://instagram.com/middlefingerasaurus/" id="instagram" target="_blank">Instagram</a>
+        <a href="http://nimwunnan.tumblr.com/" id="tumblr" target="_blank">Tumblr</a>      
+      </div>
+      <div id="hr-wrap">
+        <hr>
+        <hr>
+        <hr>
+      </div>
+      </div>
+      <h1>You can find me on<br> these internets</h1>
     </section>
     <section id="feeds">
     <div class="half" id="feed-tags">
       <h1>When I saw this I said </h1>
-      <p><a href="#feeds" class="feed-link" >ha</a> -- <a href="#feeds" class="feed-link" id="wow-link">wow</a> -- <a href="#">good</a> </p>
+      <p><a href="#feeds" class="feed-link" >ha</a> -- <a href="#feeds" class="feed-link" id="wow-link">wow</a> -- <a href="#feeds" class="feed-link" id="good-link">good</a> </p>
     </div>
     <div class="half feed" id="wow-feed">
       [[!spieFeed? &setFeedUrl=`http://feeds.pinboard.in/rss/secret:b033bb0b394dfb0e3cb3/u:nimwunnan/t:wow/` &tpl=`feedTpl`]]
     </div>
     <div class="half feed" id="ha-feed">
       [[!spieFeed? &setFeedUrl=`http://feeds.pinboard.in/rss/secret:b033bb0b394dfb0e3cb3/u:nimwunnan/t:ha/` &tpl=`feedTpl`]]
+    </div>
+    <div class="half feed" id="good-feed">
+      [[!spieFeed? &setFeedUrl=`http://feeds.pinboard.in/rss/secret:b033bb0b394dfb0e3cb3/u:nimwunnan/t:good/` &tpl=`feedTpl`]]
     </div>
     </section>
     

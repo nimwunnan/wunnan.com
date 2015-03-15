@@ -8,7 +8,7 @@ header
   width: 100%
   top: 0px
   z-index: 15000
-  font-family: "Lato", sans-serif
+  // font-family: "Lato", sans-serif
   font-weight: bold
   a.bug
     background: transparent url(../images/wbug.png) 10px 10px no-repeat
@@ -20,54 +20,59 @@ header
       background-position: 12px 12px
     p 
       display: none
-  ul
+  #nav-wrapper
     float: right
-    margin-right: 70px
-    width: 250px
-    padding: 15px 20px
-    li
-      color: $white
-      float: left
-      padding: 0px 5px 0px 0px
-      a 
-        color: $white
-        &:hover
-          color: $flatred
-  #extra-nav 
-    +transition-property(max-height)
-    +transition-duration(.2s)
-    max-height: 0px
-    overflow: hidden
-    padding: 0px 20px
-    clear: both
-    &.open
-      border-top: 1px dashed $yellowgrey
-      max-height: 300px
+    margin-top: -1px
+    ul
+      font-family: "Ropa Sans", Helvetica, sans-serif
+      float: right
+      margin-right: 70px
+      width: 250px
       padding: 15px 20px
-
-  #nav-toggle 
-    float: right
-    margin-right: 70px
-    width: 250px
-    clear: both
-    padding: 0px 20px
-    border-top: 1px solid $white
-    &:hover
-      border-top: 1px solid $flatred
-    .tab 
-      cursor: pointer
-      width: 100%
-      background: transparent url(../images/tab.png) center -51px no-repeat
-      @include image-2x("../images/tab@2x.png", 31px, auto)
-      float: left
-      height: 25px
-      font-size: 0px
+      // margin-top: -75px
+      li
+        color: $white
+        float: left
+        padding: 0px 5px 0px 0px
+        a 
+          color: $white
+          &:hover
+            color: $flatred
+    #nav 
+      +transition-property(max-height)
+      +transition-duration(.2s)
+      max-height: 0px
+      overflow: hidden
+      padding: 0px 20px
+      clear: both
       &.open
-        background-position: center -77px      
+        max-height: 300px
+        padding: 15px 20px
+
+    #nav-toggle 
+      float: right
+      margin-right: 70px
+      width: 250px
+      clear: both
+      padding: 0px 20px
+      border-top: 1px solid $yellowgrey
+      // margin-top: -75px
       &:hover
-        background-position: center top
+        border-top: 1px solid $flatred
+      .tab 
+        cursor: pointer
+        width: 100%
+        background: transparent url(../images/tab.png) center -51px no-repeat
+        @include image-2x("../images/tab@2x.png", 31px, auto)
+        float: left
+        height: 25px
+        font-size: 0px
         &.open
-          background-position: center -26px      
+          background-position: center -77px      
+        &:hover
+          background-position: center top
+          &.open
+            background-position: center -26px      
 
 
 

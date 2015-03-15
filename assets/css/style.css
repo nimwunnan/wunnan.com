@@ -144,7 +144,6 @@ header {
   width: 100%;
   top: 0px;
   z-index: 15000;
-  font-family: "Lato", sans-serif;
   font-weight: bold; }
   header a.bug {
     background: transparent url(../images/wbug.png) 10px 10px no-repeat;
@@ -160,63 +159,66 @@ header {
       background-position: 12px 12px; }
     header a.bug p {
       display: none; }
-  header ul {
+  header #nav-wrapper {
     float: right;
-    margin-right: 70px;
-    width: 250px;
-    padding: 15px 20px; }
-    header ul li {
-      color: white;
-      float: left;
-      padding: 0px 5px 0px 0px; }
-      header ul li a {
-        color: white; }
-        header ul li a:hover {
-          color: #ea5555; }
-  header #extra-nav {
-    -webkit-transition-property: max-height;
-    -moz-transition-property: max-height;
-    -o-transition-property: max-height;
-    transition-property: max-height;
-    -webkit-transition-duration: 0.2s;
-    -moz-transition-duration: 0.2s;
-    -o-transition-duration: 0.2s;
-    transition-duration: 0.2s;
-    max-height: 0px;
-    overflow: hidden;
-    padding: 0px 20px;
-    clear: both; }
-    header #extra-nav.open {
-      border-top: 1px dashed #eae9df;
-      max-height: 300px;
+    margin-top: -1px; }
+    header #nav-wrapper ul {
+      font-family: "Ropa Sans", Helvetica, sans-serif;
+      float: right;
+      margin-right: 70px;
+      width: 250px;
       padding: 15px 20px; }
-  header #nav-toggle {
-    float: right;
-    margin-right: 70px;
-    width: 250px;
-    clear: both;
-    padding: 0px 20px;
-    border-top: 1px solid white; }
-    header #nav-toggle:hover {
-      border-top: 1px solid #ea5555; }
-    header #nav-toggle .tab {
-      cursor: pointer;
-      width: 100%;
-      background: transparent url(../images/tab.png) center -51px no-repeat;
-      float: left;
-      height: 25px;
-      font-size: 0px; }
-      @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
-        header #nav-toggle .tab {
-          /* on retina, use image that's scaled by 2 */
-          background-image: url("../images/tab@2x.png");
-          background-size: 31px auto; } }
-      header #nav-toggle .tab.open {
-        background-position: center -77px; }
-      header #nav-toggle .tab:hover {
-        background-position: center top; }
-        header #nav-toggle .tab:hover.open {
-          background-position: center -26px; }
+      header #nav-wrapper ul li {
+        color: white;
+        float: left;
+        padding: 0px 5px 0px 0px; }
+        header #nav-wrapper ul li a {
+          color: white; }
+          header #nav-wrapper ul li a:hover {
+            color: #ea5555; }
+    header #nav-wrapper #nav {
+      -webkit-transition-property: max-height;
+      -moz-transition-property: max-height;
+      -o-transition-property: max-height;
+      transition-property: max-height;
+      -webkit-transition-duration: 0.2s;
+      -moz-transition-duration: 0.2s;
+      -o-transition-duration: 0.2s;
+      transition-duration: 0.2s;
+      max-height: 0px;
+      overflow: hidden;
+      padding: 0px 20px;
+      clear: both; }
+      header #nav-wrapper #nav.open {
+        max-height: 300px;
+        padding: 15px 20px; }
+    header #nav-wrapper #nav-toggle {
+      float: right;
+      margin-right: 70px;
+      width: 250px;
+      clear: both;
+      padding: 0px 20px;
+      border-top: 1px solid #eae9df; }
+      header #nav-wrapper #nav-toggle:hover {
+        border-top: 1px solid #ea5555; }
+      header #nav-wrapper #nav-toggle .tab {
+        cursor: pointer;
+        width: 100%;
+        background: transparent url(../images/tab.png) center -51px no-repeat;
+        float: left;
+        height: 25px;
+        font-size: 0px; }
+        @media (min--moz-device-pixel-ratio: 1.3), (-o-min-device-pixel-ratio: 2.6 / 2), (-webkit-min-device-pixel-ratio: 1.3), (min-device-pixel-ratio: 1.3), (min-resolution: 1.3dppx) {
+          header #nav-wrapper #nav-toggle .tab {
+            /* on retina, use image that's scaled by 2 */
+            background-image: url("../images/tab@2x.png");
+            background-size: 31px auto; } }
+        header #nav-wrapper #nav-toggle .tab.open {
+          background-position: center -77px; }
+        header #nav-wrapper #nav-toggle .tab:hover {
+          background-position: center top; }
+          header #nav-wrapper #nav-toggle .tab:hover.open {
+            background-position: center -26px; }
 
 #page-wrapper {
   overflow: auto;
@@ -248,100 +250,154 @@ header {
   bottom: 0px;
   background: #eae9df; }
 
-#page-wrapper #landing {
-  background-image: url(../images/tripplepalm.jpg); }
-#page-wrapper #art {
-  background-image: url(../images/hotel-ink-bg.jpg); }
-#page-wrapper #bio {
-  background-image: url(../images/headshot.jpg); }
-#page-wrapper #words {
-  padding: 250px 90px 100px;
-  color: #3a3a3a;
-  height: auto;
-  overflow: auto; }
-  #page-wrapper #words h2, #page-wrapper #words h1 {
-    font-family: "Abril Fatface", cursive;
-    line-height: 2em; }
-  #page-wrapper #words h1 {
-    font-size: 3.5em;
-    background-color: #acb5bb;
-    color: #eae9df;
-    width: 100%;
-    text-indent: 20px; }
-  #page-wrapper #words h2 {
-    font-size: 1.8em;
-    margin: 10px 0px;
-    border-bottom: 1px dashed #dddcd7;
-    border-top: 1px dashed #dddcd7;
-    display: inline-block;
-    width: 100%; }
-    #page-wrapper #words h2 a {
-      color: #ea5555; }
-      #page-wrapper #words h2 a:hover {
-        color: #80cfef; }
-  #page-wrapper #words p {
-    padding-left: 10px;
-    font-family: "PT Serif", serif;
-    font-size: 1.1em;
-    display: inline-block;
-    width: 100%;
-    line-height: 1.5em; }
-#page-wrapper #feeds {
-  background-color: #9ca6ad;
-  font-family: "Lato", sans-serif;
-  font-weight: 900;
-  padding: 200px 25px;
-  color: #acb5bb; }
-  #page-wrapper #feeds.open {
+#page-wrapper {
+  font-family: "Lato", Helvetica, sans-serif; }
+  #page-wrapper p {
+    font-size: 1.2em;
+    line-height: 1.4em; }
+  #page-wrapper #landing {
+    background-image: url(../images/tripplepalm.jpg); }
+  #page-wrapper #art {
+    background-image: url(../images/hotel-ink-bg.jpg); }
+  #page-wrapper #bio {
+    background-image: url(../images/headshot.jpg);
+    height: auto; }
+    #page-wrapper #bio div {
+      background-color: transparent;
+      border: 1px solid #f0f0ff;
+      float: left;
+      padding: 15px;
+      width: 30%;
+      margin: 50vh 35% 100vh;
+      color: #acb5bb;
+      font-weight: 600;
+      font-style: italic; }
+      #page-wrapper #bio div p {
+        padding: 10px;
+        background-color: #eae9df; }
+      #page-wrapper #bio div a {
+        text-decoration: none;
+        color: #ea5555; }
+        #page-wrapper #bio div a:hover {
+          color: #80cfef; }
+  #page-wrapper #words {
+    padding: 250px 90px 100px;
+    color: #3a3a3a;
     height: auto;
     overflow: auto; }
-  #page-wrapper #feeds .feedLink.spie-odd-row {
-    background-color: #acb5bb; }
-  #page-wrapper #feeds div.half.feed {
-    display: none; }
-  #page-wrapper #feeds h1 {
-    font-size: 3.6em;
-    line-height: 1.8em;
-    margin: 10px 0px;
-    text-transform: uppercase; }
-  #page-wrapper #feeds p {
-    font-weight: 700;
-    padding: 10px; }
-  #page-wrapper #feeds a {
-    color: #ea5555;
-    padding: 4px;
-    font-size: 2em;
-    line-height: 1.6em;
-    text-transform: capitalize; }
-    #page-wrapper #feeds a:hover {
-      background-color: #eae9df; }
-#page-wrapper #social {
-  background-color: #51585e;
-  font-family: "Ropa Sans";
-  padding-top: 15%;
-  text-align: center; }
-  #page-wrapper #social a {
-    color: white;
-    clear: both;
-    padding: 40px 15px;
-    text-decoration: none;
-    font-size: 3em; }
-    #page-wrapper #social a:hover {
-      color: #ea5555; }
-  #page-wrapper #social h1 {
-    color: #3a3a3a;
-    margin: 20px 25px;
-    font-size: 4em;
-    text-transform: uppercase; }
-  #page-wrapper #social hr {
-    border-top: 1px solid #626d76;
-    border-bottom: 1px solid #43484c; }
-  #page-wrapper #social #hr-wrap {
-    width: 100%;
-    float: left;
-    padding: 50px;
-    box-sizing: border-box; }
-  #page-wrapper #social #dev-bottom {
-    background-color: #ea5555;
-    width: 100%;
-    min-height: 350px; }
+    #page-wrapper #words h2, #page-wrapper #words h1 {
+      font-family: "Abril Fatface", cursive;
+      line-height: 2em; }
+    #page-wrapper #words h1 {
+      font-size: 3.5em;
+      background-color: #acb5bb;
+      color: #eae9df;
+      width: 100%;
+      text-indent: 20px; }
+    #page-wrapper #words h2 {
+      font-size: 1.8em;
+      margin: 10px 0px;
+      border-bottom: 1px dashed #dddcd7;
+      border-top: 1px dashed #dddcd7;
+      display: inline-block;
+      width: 100%; }
+      #page-wrapper #words h2 a {
+        color: #ea5555; }
+        #page-wrapper #words h2 a:hover {
+          color: #80cfef; }
+    #page-wrapper #words p {
+      padding-left: 10px;
+      font-family: "PT Serif", serif;
+      font-size: 1.1em;
+      display: inline-block;
+      width: 100%;
+      line-height: 1.5em; }
+  #page-wrapper #feeds {
+    background-color: #9ca6ad;
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    padding: 200px 25px;
+    color: #acb5bb; }
+    #page-wrapper #feeds.open {
+      height: auto;
+      overflow: auto; }
+    #page-wrapper #feeds .feedLink.spie-odd-row {
+      background-color: #acb5bb; }
+    #page-wrapper #feeds div.half.feed {
+      display: none; }
+    #page-wrapper #feeds h1 {
+      font-size: 3.6em;
+      line-height: 1.8em;
+      margin: 10px 0px;
+      text-transform: uppercase; }
+    #page-wrapper #feeds p {
+      font-weight: 700;
+      padding: 10px; }
+    #page-wrapper #feeds a {
+      color: #ea5555;
+      padding: 4px;
+      font-size: 2em;
+      line-height: 1.6em;
+      text-transform: capitalize; }
+      #page-wrapper #feeds a:hover {
+        background-color: #eae9df; }
+  #page-wrapper #social {
+    background-color: #51585e;
+    font-family: "Ropa Sans";
+    text-align: center; }
+    #page-wrapper #social #social-wrap {
+      float: left;
+      padding-top: 15vh;
+      width: 100%;
+      box-sizing: border-box; }
+      #page-wrapper #social #social-wrap a {
+        color: #eae9df;
+        clear: both;
+        padding: 15px;
+        text-decoration: none;
+        font-size: 5vh; }
+        #page-wrapper #social #social-wrap a:hover {
+          color: #ea5555; }
+      #page-wrapper #social #social-wrap hr {
+        border-top: 1px solid #626d76;
+        border-bottom: 1px solid #43484c; }
+      #page-wrapper #social #social-wrap #hr-wrap {
+        width: 100%;
+        float: left;
+        box-sizing: border-box; }
+    #page-wrapper #social h1 {
+      color: #51585e;
+      padding: 5px;
+      font-size: 5vh;
+      float: left;
+      width: 100%;
+      text-align: center;
+      text-shadow: -1px -1px 0 #ea5555, 1px -1px 0 #ea5555, -1px 1px 0 #ea5555, 1px 1px 0 #ea5555;
+      text-transform: uppercase;
+      font-family: "Lato", sans-serif;
+      font-weight: 900; }
+    #page-wrapper #social #social-links {
+      float: left;
+      width: 100%;
+      text-align: center;
+      padding: 20px 30%; }
+  #page-wrapper #place-and-time {
+    background-image: url(../images/beached-rock-nostalgic.jpg); }
+    #page-wrapper #place-and-time div {
+      width: 100%;
+      text-align: center;
+      padding: 10%; }
+      #page-wrapper #place-and-time div a {
+        color: #9ca6ad;
+        font-family: "Lato", sans-serif;
+        font-weight: 800;
+        text-transform: small-caps; }
+    #page-wrapper #place-and-time h1 {
+      font-family: "Abril Fatface", cursive;
+      font-size: 4em;
+      color: #ea5555;
+      width: 100%;
+      margin-top: 10vh;
+      text-align: center;
+      padding: 25px 0px;
+      border-bottom: 1px dashed #9ca6ad; }

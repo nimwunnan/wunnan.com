@@ -1,11 +1,38 @@
 #page-wrapper
+  font-family: "Lato", Helvetica, sans-serif
+  p
+    font-size: 1.2em
+    line-height: 1.4em
+  a
+    // &:visited
+    // color: $bluegrey
   #landing
     background-image: url(../images/tripplepalm.jpg)
   #art
     background-image: url(../images/hotel-ink-bg.jpg)
   #bio
     background-image: url(../images/headshot.jpg)
+    height: auto
     // background-size: 60%
+    div
+      // font-family: "Ropa Sans", Helvetica, sans-serif
+      background-color: transparent
+      border: 1px solid $coolgrey
+      float: left
+      padding: 15px
+      width: 30%
+      margin: 50vh 35% 100vh
+      color: $bluegrey
+      font-weight: 600
+      font-style: italic
+      p 
+        padding: 10px
+        background-color: $yellowgrey
+      a
+        text-decoration: none
+        color: $flatred
+        &:hover
+          color: $lightblue
   #words
     // background-image: url(../images/werds.png)
     padding: 250px 90px 100px
@@ -85,33 +112,65 @@
   #social
     background-color: $slategrey
     font-family: "Ropa Sans"
-    padding-top: 15%
     text-align: center
-
-    a
-      color: $white
-      clear: both
-      padding: 40px 15px
-      text-decoration: none
-      font-size: 3em
-      &:hover
-        color: $flatred
-    h1
-      color: $darkgrey
-      margin: 20px 25px
-      font-size: 4em
-      // text-shadow: 1px -1px 0px $darkbluegrey
-      text-transform: uppercase
-    hr 
-      border-top: 1px solid #626D76
-      border-bottom: 1px solid #43484C
-    #hr-wrap
-      width: 100%
+    #social-wrap
       float: left
-      padding: 50px
-      box-sizing: border-box
-      
-    #dev-bottom
-      background-color: $flatred
+      // height: 65vh
+      padding-top: 15vh
       width: 100%
-      min-height: 350px
+      box-sizing: border-box
+      a
+        color: $yellowgrey
+        clear: both
+        padding: 15px
+        text-decoration: none
+        font-size: 5vh
+        &:hover
+          color: $flatred
+      hr 
+        border-top: 1px solid #626D76
+        border-bottom: 1px solid #43484C
+      #hr-wrap
+        width: 100%
+        float: left
+        box-sizing: border-box
+    h1
+      color: $slategrey
+      padding: 5px
+      font-size: 5vh
+      float: left
+      width: 100%
+      // height: 35vh
+      // background-color: $flatred
+      // padding: 10vh 15px 0
+      text-align: center
+      text-shadow:   -1px -1px 0 $flatred,  1px -1px 0 $flatred, -1px 1px 0 $flatred, 1px 1px 0 $flatred 
+      text-transform: uppercase
+      font-family: "Lato", sans-serif
+      font-weight: 900  
+      
+    #social-links
+      float: left
+      width: 100%
+      text-align: center
+      padding: 20px 30%
+  #place-and-time
+    background-image: url(../images/beached-rock-nostalgic.jpg)
+    div
+      width: 100%
+      text-align: center
+      padding: 10%
+      a 
+        color: $darkbluegrey
+        font-family: "Lato", sans-serif
+        font-weight: 800
+        text-transform: small-caps
+    h1
+      font-family: 'Abril Fatface', cursive
+      font-size: 4em
+      color: $flatred
+      width: 100% 
+      margin-top: 10vh 
+      text-align: center 
+      padding: 25px 0px
+      border-bottom: 1px dashed $darkbluegrey

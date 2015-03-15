@@ -25,7 +25,9 @@ body {
 .fgDrawer {
   float: left;
   width: 100%;
-  padding: 20px; }
+  padding: 20px;
+  text-align: center;
+  margin: 45px 0px; }
 
 img.fgDisplay {
   cursor: pointer;
@@ -39,10 +41,10 @@ img.fgDisplay {
   position: absolute;
   z-index: 10000; }
   .article h1 {
-    color: #b5b9bd;
-    font-family: 'Ropa Sans', helvetica, sans-serif;
+    width: 600px;
+    color: #51585e;
+    font-family: 'Lato', helvetica, sans-serif;
     text-align: center;
-    width: 400px;
     font-size: 2em;
     line-height: 2.5em;
     overflow: auto;
@@ -53,9 +55,10 @@ img.fgDisplay {
     max-width: 600px;
     margin: 20px auto;
     color: #51585e;
-    font-family: 'Ropa Sans', helvetica, sans-serif;
+    font-family: 'Lato', helvetica, sans-serif;
     text-align: left;
-    font-size: 1.6em; }
+    font-size: 1.2em;
+    line-height: 1.4em; }
 
 .fgWrapper {
   width: 100%;
@@ -135,7 +138,10 @@ div.controls {
     border: solid white 2px; }
 
 .fgThumb {
-  float: left; }
+  display: inline-block;
+  border: 1px solid whitesmoke; }
+  .fgThumb:hover {
+    border: 1px solid #b5b9bd; }
   .fgThumb img {
     max-height: 100px;
     cursor: pointer; }
