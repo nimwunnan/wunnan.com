@@ -11,6 +11,10 @@ a {
 li {
   line-height: 24px;
   font-size: 16px; }
+  @media (max-device-width: 480px), (max-width: 480px) {
+    li {
+      font-size: 2vh;
+      line-height: 2.2vh; } }
   li.title {
     font-size: 1.5em;
     line-height: 2em; }

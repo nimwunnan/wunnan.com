@@ -13,6 +13,8 @@
   #bio
     background-image: url(../images/headshot.jpg)
     height: auto
+    @media (max-device-width: $phone-wide)
+      background-repeat: repeat-y
     // background-size: 60%
     div
       // font-family: "Ropa Sans", Helvetica, sans-serif
@@ -22,6 +24,9 @@
       padding: 15px
       width: 40%
       margin: 20vh 30% 100vh
+      @media (max-device-width: $tablet), (max-width: $tablet)
+        width: 80%
+        margin: 10vh 10% 100vh
       color: $darkgrey
       font-weight: 600
       font-style: italic
@@ -43,8 +48,8 @@
   #words
     // background-image: url(../images/werds.png)
     padding: 250px 90px 100px
-    @media (min-width: $phone-tall)
-      padding: 100px 10px 10px
+    @media (max-device-width: $tablet), (max-width: $tablet)
+      padding: 100px 10px 10px 10px
     color: $darkgrey
     height: auto
     overflow: auto
@@ -66,6 +71,9 @@
       color: $yellowgrey
       width: 100%
       text-indent: 20px
+      @media (max-device-width: $phone-wide), (max-width: $phone-wide)
+        font-size: 2.4em
+        text-indent: 10px
 
     h2
       font-size: 1.8em
@@ -101,8 +109,8 @@
       &.feed
         display: none  
     h1
-      font-size: 3.6em
-      line-height: 1.8em
+      font-size: 5vh
+      line-height: 5.5vh
       margin: 10px 0px
       text-transform: uppercase
     p
@@ -112,8 +120,8 @@
     a
       color: $flatred
       padding: 4px
-      font-size: 2em
-      line-height: 1.6em
+      font-size: 3vh
+      line-height: 4vh
       text-transform: capitalize
       &:hover
         background-color: $yellowgrey
@@ -145,8 +153,8 @@
         box-sizing: border-box
     h1
       color: $slategrey
-      padding: 5px
-      font-size: 5vh
+      padding: 2vh
+      font-size: 7vh
       float: left
       width: 100%
       // height: 35vh

@@ -16,6 +16,10 @@ header
     float: left
     height: 75px
     min-width: 83px
+    @media (max-device-width: $tablet), (max-width: $tablet)
+      height: 40px
+      background-size: 80%
+      min-width: 50px
     &:hover
       background-position: 12px 12px
     p 
@@ -33,7 +37,7 @@ header
       li
         color: $white
         float: left
-        padding: 0px 5px 0px 0px
+        padding: 0px 5px 0px 0px    
         a 
           color: $white
           &:hover
@@ -53,6 +57,8 @@ header
       float: right
       margin-right: 70px
       width: 250px
+      @media (max-device-width: $phone-wide), (max-width: $phone-wide)
+        width: 100%
       clear: both
       padding: 0px 20px
       border-top: 1px solid $yellowgrey
@@ -89,14 +95,20 @@ header
     -moz-background-size: cover
     -o-background-size: cover
     background-size: cover
+    @media (min-width: $phone-tall) and (max-device-width: $phone-wide), (max-device-width: $phone-tall)
+      background-size: auto 100vh
+      background-attachment: scroll
+      background-position: center top
+    @media (max-width: $phone-wide) and (orientation: landscape), (max-device-width: $phone-wide) and (orientation: landscape)
+      background-size: 100vw auto           
     overflow: auto
     div.hero
-      padding-top: 350px
+      padding-top: 25vh
   .half
     float: left
     width: 50%
-    @media (min-width: $phone-wide)
-      width: 70%
+    @media (max-device-width: $tablet), screen and (max-width: $tablet)
+      width: 100%
       clear: both
     box-sizing: border-box
 

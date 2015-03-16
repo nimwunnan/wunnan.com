@@ -8,6 +8,10 @@ a { text-decoration: none; }
 li {
     line-height: $base-line-height;
     font-size: $base-font-size;
+    @media (max-device-width: $phone-wide), (max-width: $phone-wide){ 
+      font-size: 2vh;
+      line-height: 2.2vh; 
+    }
     &.title {
      @include adjust-font-size-to(24px);
     }

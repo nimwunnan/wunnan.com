@@ -60,6 +60,10 @@ a {
 li {
   line-height: 24px;
   font-size: 16px; }
+  @media (max-device-width: 480px), (max-width: 480px) {
+    li {
+      font-size: 2vh;
+      line-height: 2.2vh; } }
   li.title {
     font-size: 1.5em;
     line-height: 2em; }
@@ -155,6 +159,11 @@ header {
         /* on retina, use image that's scaled by 2 */
         background-image: url("../images/wbug@2x.png");
         background-size: 75px 54px; } }
+    @media (max-device-width: 750px), (max-width: 750px) {
+      header a.bug {
+        height: 40px;
+        background-size: 80%;
+        min-width: 50px; } }
     header a.bug:hover {
       background-position: 12px 12px; }
     header a.bug p {
@@ -199,6 +208,9 @@ header {
       clear: both;
       padding: 0px 20px;
       border-top: 1px solid #eae9df; }
+      @media (max-device-width: 480px), (max-width: 480px) {
+        header #nav-wrapper #nav-toggle {
+          width: 100%; } }
       header #nav-wrapper #nav-toggle:hover {
         border-top: 1px solid #ea5555; }
       header #nav-wrapper #nav-toggle .tab {
@@ -234,15 +246,23 @@ header {
     -o-background-size: cover;
     background-size: cover;
     overflow: auto; }
+    @media (min-width: 350px) and (max-device-width: 480px), (max-device-width: 350px) {
+      #page-wrapper section {
+        background-size: auto 100vh;
+        background-attachment: scroll;
+        background-position: center top; } }
+    @media (max-width: 480px) and (orientation: landscape), (max-device-width: 480px) and (orientation: landscape) {
+      #page-wrapper section {
+        background-size: 100vw auto; } }
     #page-wrapper section div.hero {
-      padding-top: 350px; }
+      padding-top: 25vh; }
   #page-wrapper .half {
     float: left;
     width: 50%;
     box-sizing: border-box; }
-    @media (min-width: 500px) {
+    @media (max-device-width: 750px), screen and (max-width: 750px) {
       #page-wrapper .half {
-        width: 70%;
+        width: 100%;
         clear: both; } }
 
 #frame {
@@ -277,6 +297,9 @@ header {
   #page-wrapper #bio {
     background-image: url(../images/headshot.jpg);
     height: auto; }
+    @media (max-device-width: 480px) {
+      #page-wrapper #bio {
+        background-repeat: repeat-y; } }
     #page-wrapper #bio div {
       background-color: transparent;
       border: 1px solid #80cfef;
@@ -287,6 +310,10 @@ header {
       color: #3a3a3a;
       font-weight: 600;
       font-style: italic; }
+      @media (max-device-width: 750px), (max-width: 750px) {
+        #page-wrapper #bio div {
+          width: 80%;
+          margin: 10vh 10% 100vh; } }
       #page-wrapper #bio div p {
         padding: 10px 15px;
         background-color: #ea5555;
@@ -306,9 +333,9 @@ header {
     color: #3a3a3a;
     height: auto;
     overflow: auto; }
-    @media (min-width: 350px) {
+    @media (max-device-width: 750px), (max-width: 750px) {
       #page-wrapper #words {
-        padding: 100px 10px 10px; } }
+        padding: 100px 10px 10px 10px; } }
     #page-wrapper #words h2, #page-wrapper #words h1 {
       font-family: "Abril Fatface", cursive;
       line-height: 2em; }
@@ -318,6 +345,10 @@ header {
       color: #eae9df;
       width: 100%;
       text-indent: 20px; }
+      @media (max-device-width: 480px), (max-width: 480px) {
+        #page-wrapper #words h1 {
+          font-size: 2.4em;
+          text-indent: 10px; } }
     #page-wrapper #words h2 {
       font-size: 1.8em;
       margin: 10px 0px;
@@ -350,8 +381,8 @@ header {
     #page-wrapper #feeds div.half.feed {
       display: none; }
     #page-wrapper #feeds h1 {
-      font-size: 3.6em;
-      line-height: 1.8em;
+      font-size: 5vh;
+      line-height: 5.5vh;
       margin: 10px 0px;
       text-transform: uppercase; }
     #page-wrapper #feeds p {
@@ -360,8 +391,8 @@ header {
     #page-wrapper #feeds a {
       color: #ea5555;
       padding: 4px;
-      font-size: 2em;
-      line-height: 1.6em;
+      font-size: 3vh;
+      line-height: 4vh;
       text-transform: capitalize; }
       #page-wrapper #feeds a:hover {
         background-color: #eae9df; }
@@ -391,8 +422,8 @@ header {
         box-sizing: border-box; }
     #page-wrapper #social h1 {
       color: #51585e;
-      padding: 5px;
-      font-size: 5vh;
+      padding: 2vh;
+      font-size: 7vh;
       float: left;
       width: 100%;
       text-align: center;
