@@ -95,7 +95,11 @@ header
   .half
     float: left
     width: 50%
+    @media (min-width: $phone-wide)
+      width: 70%
+      clear: both
     box-sizing: border-box
+
 
 #frame
   position: fixed
@@ -105,4 +109,14 @@ header
   margin: 0px
   bottom: 0px
   background: $yellowgrey
-
+*
+  a.photo-credit
+    color: $lightblue
+    font-size: .7em
+    font-style: italic
+    font-weight: 200
+    float: right
+    padding: 5px
+    &:hover
+      background-color: $darkbluegrey
+      color: $flatred

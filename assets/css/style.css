@@ -240,6 +240,10 @@ header {
     float: left;
     width: 50%;
     box-sizing: border-box; }
+    @media (min-width: 500px) {
+      #page-wrapper .half {
+        width: 70%;
+        clear: both; } }
 
 #frame {
   position: fixed;
@@ -249,6 +253,17 @@ header {
   margin: 0px;
   bottom: 0px;
   background: #eae9df; }
+
+* a.photo-credit {
+  color: #80cfef;
+  font-size: 0.7em;
+  font-style: italic;
+  font-weight: 200;
+  float: right;
+  padding: 5px; }
+  * a.photo-credit:hover {
+    background-color: #9ca6ad;
+    color: #ea5555; }
 
 #page-wrapper {
   font-family: "Lato", Helvetica, sans-serif; }
@@ -264,27 +279,36 @@ header {
     height: auto; }
     #page-wrapper #bio div {
       background-color: transparent;
-      border: 1px solid #f0f0ff;
+      border: 1px solid #80cfef;
       float: left;
       padding: 15px;
-      width: 30%;
-      margin: 50vh 35% 100vh;
-      color: #acb5bb;
+      width: 40%;
+      margin: 20vh 30% 100vh;
+      color: #3a3a3a;
       font-weight: 600;
       font-style: italic; }
       #page-wrapper #bio div p {
-        padding: 10px;
-        background-color: #eae9df; }
+        padding: 10px 15px;
+        background-color: #ea5555;
+        border-left: 1px solid #3a3a3a;
+        border-right: 1px solid #3a3a3a; }
       #page-wrapper #bio div a {
         text-decoration: none;
-        color: #ea5555; }
+        color: #eae9df; }
         #page-wrapper #bio div a:hover {
           color: #80cfef; }
+      #page-wrapper #bio div .contact {
+        color: #80cfef; }
+        #page-wrapper #bio div .contact:hover {
+          color: white; }
   #page-wrapper #words {
     padding: 250px 90px 100px;
     color: #3a3a3a;
     height: auto;
     overflow: auto; }
+    @media (min-width: 350px) {
+      #page-wrapper #words {
+        padding: 100px 10px 10px; } }
     #page-wrapper #words h2, #page-wrapper #words h1 {
       font-family: "Abril Fatface", cursive;
       line-height: 2em; }
@@ -392,6 +416,8 @@ header {
         font-family: "Lato", sans-serif;
         font-weight: 800;
         text-transform: small-caps; }
+        #page-wrapper #place-and-time div a:hover {
+          color: #80cfef; }
     #page-wrapper #place-and-time h1 {
       font-family: "Abril Fatface", cursive;
       font-size: 4em;
