@@ -216,7 +216,7 @@ header {
       header #nav-wrapper #nav-toggle .tab {
         cursor: pointer;
         width: 100%;
-        background: transparent url(../images/tab.png) center -51px no-repeat;
+        background: transparent url(../images/tab.png) center -52px no-repeat;
         float: left;
         height: 25px;
         font-size: 0px; }
@@ -356,17 +356,18 @@ header {
       border-top: 1px dashed #dddcd7;
       display: inline-block;
       width: 100%; }
-      #page-wrapper #words h2 a {
-        color: #ea5555; }
-        #page-wrapper #words h2 a:hover {
-          color: #80cfef; }
+    #page-wrapper #words a {
+      color: #ea5555; }
+      #page-wrapper #words a:hover {
+        color: #80cfef; }
     #page-wrapper #words p {
       padding-left: 10px;
       font-family: "PT Serif", serif;
-      font-size: 1.1em;
+      font-size: 1.7em;
       display: inline-block;
       width: 100%;
-      line-height: 1.5em; }
+      padding: 5px;
+      line-height: 1.8em; }
   #page-wrapper #feeds {
     background-color: #9ca6ad;
     font-family: "Lato", sans-serif;

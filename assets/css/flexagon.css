@@ -40,6 +40,8 @@ img.fgDisplay {
   background: whitesmoke;
   position: absolute;
   z-index: 10000; }
+  .article a {
+    color: #ea5555; }
   .article h1 {
     width: 600px;
     color: #51585e;

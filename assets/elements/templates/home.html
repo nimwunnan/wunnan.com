@@ -4,7 +4,10 @@
 [[$head]]
     <script type="text/javascript">
       $(document).ready(function(){ 
-       $(".tab").click(function(){
+       $(".tab").click(navTog);
+       $("#nav li a").click(navTog);       
+
+        function navTog(){
         if ($('#nav').hasClass("open")){
           $('#nav').removeClass("open");
           $('.tab').removeClass("open");
@@ -14,7 +17,7 @@
           $('#nav').addClass("open");          
           $('.tab').addClass("open");          
         }
-      });
+      }
        
        $(".feed-link").click(function(){
         console.log('fbadf');
@@ -68,7 +71,7 @@
         <li><a href="#place-and-time">Snapshots</a> // </li>
     <!-- <li><a href="#dev">Web Production</a></li> -->
     <li><a href="#feeds">Curiosity</a> // </li>
-    <li><a href="#social">Social</a> \\ </li>
+    <li><a href="#social">Social</a></li>
     <!-- <li><a href="#friends">Friends</a></li> -->
   </ul>
  <div id="nav-toggle">
@@ -98,26 +101,28 @@
           </div>
             <ul style="padding-left:20px; width:32%;">
               <li class="title">Painting</li>
-              <li><a href="obscured-1">Obscured I</a></li>
-              <li><a href="obscured-part-2">Obscured II</a></li>
-              <li><a href="obscured-small">Obscured - Small</a></li>
-              <li><a href="man-of-steel">Man of Steel</a></li>
+              <li><a href="[[~9]]">Rectangulectures</a></li>
+              <li><a href="[[~12]]">Soft Marks</a></li>
+              <li><a href="[[~11]]">Paint Landscaping</a></li>
+              <li><a href="[[~16]]">Still Wet</a></li>
+              <li><a href="[[~2]]">Obscured I</a></li>
+              <li><a href="[[~6]]">Obscured II</a></li>
+              <li><a href="[[~10]]">Obscured - Small</a></li>
+              <li><a href="[[~14]]">Pictures of Superman</a></li>
+
           </ul>
            <ul style="padding-left:20px; width:32%;">
               <li class="title">Drawing</li>
-              <li><a href="upsur-nova">Upsur Nova</a></li>
-          </ul>
-      <!--    <ul>
+              <li><a href="[[~13]]">Upsur Nova</a></li>
               <li class="title">Sculpture</li>
-              <li><a href="#">The Reliable Metaphysics of Everyday Life</a></li>
-          </ul> -->
+              <li><a href="[[~17]]">The Reliable Metaphysics of Everyday Life</a></li>
+          </ul>
            <ul style="padding-left:20px; width:32%;">
               <li class="title">Installation</li>
-              <li><a href="chamber-i">Chamber 1</a></li>
-              <li><a href="chamber-ii">Chamber 2</a></li>
-              <li><a href="the-space-between">The Space Between</a></li>
+              <li><a href="[[~7]]">Chamber 1</a></li>
+              <li><a href="[[~8]]">Chamber 2</a></li>
+              <li><a href="[[~5]]">The Space Between</a></li>
       <!--        <li><a href="#">Glasgow International</a></li>-->
-              
           </ul>
       <!--    <ul>
               <li class="title">Curation</li>
@@ -130,11 +135,11 @@
     <section id="bio">
     <div>
     <p>I studied <a href="#art">painting</a> at <a href="http://www.gsa.ac.uk/" target="_blank">the Glasgow School of Art.</a> I keep a <a href="#">studio</a> in SE Industrial Portland, which is for rent when I travel.</p>
-    <p>I founded this <a href="http://research-club.org/" target="_blank">Research Club</a> but definitely not <a href="https://www.theresearchclub.com/" target="_blank">this one.</a> <a href="http://twitter.com/reserachclub"> I would love to talk to you about alternative education projects.</a></p>
+    <p>I founded this <a href="http://research-club.org/" target="_blank">Research Club</a> but definitely not <a href="https://www.theresearchclub.com/" target="_blank">this one.</a> <a href="http://twitter.com/researchclub"> I would love to talk to you about alternative education projects.</a></p>
       <p>
         I produce websites and projects with the brilliant delinquents at <a href="http://bletcheley.co">Bletchley Park.</a> I'm available to freelance.
       </p>
-      <p>I worked in rare books for 7 years before I did any of that with <a href="http://www.dawntreaderbooks.com/" target="_blank">some</a> wonderful <a href="http://www.pirages.com/" target="_blank">people</a></p>
+      <p>Before I did any of that, I worked in rare books for 7 years with some <a href="http://www.dawntreaderbooks.com/" target="_blank">wonderful</a> <a href="http://www.pirages.com/" target="_blank">people</a></p>
       <p>I've got a heavy case of <a href="http://www.thesynesthesianetwork.com/users/nim" target="_blank">synesthesia</a> and am working on a <a href="https://docs.google.com/document/d/1EsEUJHv_1CUvUTy34wVR1ECkqBpakKRsKEav9ZB_zto/edit#heading=h.nxi67yf5kimh" target="_blank">synesthesia starter kit</a> with the good people of <a href="http://www.reddit.com/r/Synesthesia/" target="_blank">r/Synesthesia</a>. Contributors welcome.</p>
       <p>I love Tai Chi and practice <a href="https://www.youtube.com/watch?v=2pu4Wic-YJ4" target="_blank">Sun</a> and <a href="https://www.youtube.com/watch?v=USJPmCZ6Efc" target="_blank">Chen Man Ching</a> style, often with the <a href="https://www.youtube.com/watch?v=S-eM1-3ew28" target="_blank">talented and patient folks</a> who meet in Laurlhurst Park in Portland, OR.</p>
       <p><a href="#social" class="contact">Get in touch</a></p>
@@ -146,29 +151,28 @@
       <div class="half">
         <h1>Nonfiction</h1>
         <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p> 
-        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Nancy Drew and the Case of Writer's Block</a></h2>
-        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
-       <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p>
-        <h1>Reviews</h1>
-        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
+        <p>An essay about cameras and the things I pointed them at. The first of a series of essays about perception, images, and patterns that I will be posting on Medium in 2015.</p> 
+       <h2><a href="https://medium.com/@nimwunnan/my-2-5-hours-at-the-2015-los-angeles-art-book-fair-da2cb96057af">LAABF</a></h2>
+        <p>My 2.5 hours at the Los Angeles Art Book fair. The recap no one asked for.</p>
+        <h1>Fiction</h1>
+        <h2><a href="/assets/nancycreen.pdf">Nancy Drew and the Case of Writer's Block</a></h2>
+        <p>Because why not write an existential Nancy Drew story. [pdf]</p>
+  
         </div>
         <div class="half">
-        <h1>Fiction</h1>
-
-        <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et. Mauris eros est, pulvinar vitae condimentum ac, laoreet tincidunt sem. Proin vel lacus mattis libero varius iaculis. Morbi rutrum porta tristique. Pellentesque pharetra vehicula ante, sed aliquam nibh condimentum ut. Morbi sapien sapien, convallis vitae aliquet eu, tempor nec purus. Quisque at dui quis turpis tempus facilisis non eget arcu. Cras rhoncus tincidunt lorem id pharetra. Morbi dignissim purus nec lacus convallis pretium.</p> 
-       <h2><a href="https://medium.com/@nimwunnan/seeing-through-photographs-2133d9257678">Seeing Through Photographs</a></h2>
-        <p>An essay about cameras and the things I pointed them at. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam laoreet metus, id elementum tellus vulputate et.</p> 
+          <h1>Reviews</h1>
+          <h2><a href="http://www.orartswatch.org/author/nim-wunnan/">Portland Dance</a></h2>
+          <p>I've been reviewing dance and art for <a href="http://www.orartswatch.org" target="_blank">Oregon Artswatch</a> for a couple years now. I got to see <a href="http://www.orartswatch.org/dance-review-the-important-discomfort-of-maguy-marins-salves/">some</a> <a href="http://www.orartswatch.org/diavolo-rocks-the-stage/">good</a> <a href="http://www.orartswatch.org/dance-preview-allie-hankins-channels-her-inner-nijinsky/">stuff.</a></p>
+          <h2><a href="http://www.orartswatch.org/nationale-art-gallery-sums-up-its-year/">Nationale is a special place</a></h2>
+          <p>My friend May has been doing a bang-up job of curating and keeping shop in Portland.</p>
       </div>
     </section>
     <section id="place-and-time">
     <h1>Place and Time</h1>
     <div>
-      <p><a href="#">That time I lived on my friend's boat</a></p>
-      <p><a href="#">That time we went to Joshua tree</a></p>
+      <p><a href="[[~20]]">That time I went to LA</a></p>
+      <p><a href="[[~19]]">That time we went to Crater Lake</a></p>
+      <p><a href="[[~15]]">That time we went to Joshua tree</a></p>
     </div>
     </section>
     <section id="social">

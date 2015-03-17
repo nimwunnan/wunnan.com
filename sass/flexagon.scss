@@ -6,6 +6,7 @@ $middlegrey:#eae9e9;
 $bluegrey: #51585E;
 $white: whitesmoke;
 $lightbluegrey: #B5B9BD;
+$flatred: #EA5555;
 
 * {
     box-sizing:border-box;
@@ -61,6 +62,9 @@ img.fgDisplay {
     background: $white;
     position: absolute;
     z-index: 10000;
+    a {
+      color: $flatred;
+    }
     h1 {
         width: 600px;
         color: $bluegrey;
